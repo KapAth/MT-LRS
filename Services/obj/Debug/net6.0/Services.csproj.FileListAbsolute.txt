@@ -1,0 +1,15 @@
+C:\Users\akaps\Documents\Visual Studio 2022\Projects\MT_LRS\Services\obj\Debug\net6.0\Services.csproj.AssemblyReference.cache
+C:\Users\akaps\Documents\Visual Studio 2022\Projects\MT_LRS\Services\obj\Debug\net6.0\Services.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\akaps\Documents\Visual Studio 2022\Projects\MT_LRS\Services\obj\Debug\net6.0\Services.AssemblyInfoInputs.cache
+C:\Users\akaps\Documents\Visual Studio 2022\Projects\MT_LRS\Services\obj\Debug\net6.0\Services.AssemblyInfo.cs
+C:\Users\akaps\Documents\Visual Studio 2022\Projects\MT_LRS\Services\obj\Debug\net6.0\Services.csproj.CoreCompileInputs.cache
+C:\Users\akaps\Documents\Visual Studio 2022\Projects\MT_LRS\Services\bin\Debug\net6.0\Services.deps.json
+C:\Users\akaps\Documents\Visual Studio 2022\Projects\MT_LRS\Services\bin\Debug\net6.0\Services.dll
+C:\Users\akaps\Documents\Visual Studio 2022\Projects\MT_LRS\Services\bin\Debug\net6.0\Services.pdb
+C:\Users\akaps\Documents\Visual Studio 2022\Projects\MT_LRS\Services\bin\Debug\net6.0\Repositories.dll
+C:\Users\akaps\Documents\Visual Studio 2022\Projects\MT_LRS\Services\bin\Debug\net6.0\Repositories.pdb
+C:\Users\akaps\Documents\Visual Studio 2022\Projects\MT_LRS\Services\obj\Debug\net6.0\Services.csproj.CopyComplete
+C:\Users\akaps\Documents\Visual Studio 2022\Projects\MT_LRS\Services\obj\Debug\net6.0\Services.dll
+C:\Users\akaps\Documents\Visual Studio 2022\Projects\MT_LRS\Services\obj\Debug\net6.0\refint\Services.dll
+C:\Users\akaps\Documents\Visual Studio 2022\Projects\MT_LRS\Services\obj\Debug\net6.0\Services.pdb
+C:\Users\akaps\Documents\Visual Studio 2022\Projects\MT_LRS\Services\obj\Debug\net6.0\ref\Services.dll

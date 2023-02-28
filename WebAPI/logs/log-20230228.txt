@@ -1,0 +1,13 @@
+2023-02-28 12:39:07.461 +02:00 [INF] Now listening on: https://localhost:7210
+2023-02-28 12:39:07.510 +02:00 [INF] Now listening on: http://localhost:5252
+2023-02-28 12:39:07.518 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-02-28 12:39:07.521 +02:00 [INF] Hosting environment: Development
+2023-02-28 12:39:07.522 +02:00 [INF] Content root path: C:\Users\akaps\Documents\Visual Studio 2022\Projects\MT_LRS\WebAPI\
+2023-02-28 12:39:30.124 +02:00 [INF] HTTP GET /api/users/8888888 responded 400 in 3771.1936 ms
+2023-02-28 12:47:37.155 +02:00 [INF] Now listening on: https://localhost:7210
+2023-02-28 12:47:37.225 +02:00 [INF] Now listening on: http://localhost:5252
+2023-02-28 12:47:37.230 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-02-28 12:47:37.232 +02:00 [INF] Hosting environment: Development
+2023-02-28 12:47:37.234 +02:00 [INF] Content root path: C:\Users\akaps\Documents\Visual Studio 2022\Projects\MT_LRS\WebAPI\
+2023-02-28 12:47:43.724 +02:00 [WRN] User 8888888 not found
+2023-02-28 12:47:43.738 +02:00 [INF] HTTP GET /api/users/8888888 responded 400 in 2097.1303 ms

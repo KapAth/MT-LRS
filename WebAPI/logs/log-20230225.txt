@@ -1,0 +1,171 @@
+2023-02-25 00:22:31.457 +02:00 [INF] Now listening on: https://localhost:7210
+2023-02-25 00:22:31.497 +02:00 [INF] Now listening on: http://localhost:5252
+2023-02-25 00:22:31.504 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-02-25 00:22:31.505 +02:00 [INF] Hosting environment: Development
+2023-02-25 00:22:31.506 +02:00 [INF] Content root path: C:\Users\akaps\Documents\Visual Studio 2022\Projects\MT_LRS\WebAPI\
+2023-02-25 00:22:40.209 +02:00 [INF] HTTP GET /api/users responded 200 in 2878.7360 ms
+2023-02-25 00:28:34.118 +02:00 [INF] HTTP GET /api/users responded 200 in 87.4736 ms
+2023-02-25 00:33:48.138 +02:00 [INF] HTTP GET /api/users responded 200 in 145.5852 ms
+2023-02-25 00:34:00.959 +02:00 [INF] HTTP GET /api/users responded 200 in 4.8693 ms
+2023-02-25 00:37:26.681 +02:00 [INF] HTTP GET /api/users responded 200 in 33.3370 ms
+2023-02-25 00:37:28.767 +02:00 [INF] HTTP GET /api/users responded 200 in 9.3963 ms
+2023-02-25 00:40:09.553 +02:00 [INF] HTTP GET /api/users responded 200 in 33.8999 ms
+2023-02-25 00:40:25.692 +02:00 [INF] HTTP OPTIONS /api/users responded 204 in 2.4038 ms
+2023-02-25 00:40:26.282 +02:00 [INF] HTTP POST /api/users responded 201 in 575.9577 ms
+2023-02-25 00:40:26.295 +02:00 [INF] HTTP GET /api/users responded 200 in 5.6352 ms
+2023-02-25 00:40:27.737 +02:00 [INF] HTTP POST /api/users responded 201 in 11.0008 ms
+2023-02-25 00:40:27.751 +02:00 [INF] HTTP GET /api/users responded 200 in 6.5188 ms
+2023-02-25 00:40:29.431 +02:00 [INF] HTTP POST /api/users responded 201 in 8.9703 ms
+2023-02-25 00:40:29.446 +02:00 [INF] HTTP GET /api/users responded 200 in 7.0694 ms
+2023-02-25 00:40:30.527 +02:00 [INF] HTTP POST /api/users responded 201 in 8.7859 ms
+2023-02-25 00:40:30.541 +02:00 [INF] HTTP GET /api/users responded 200 in 6.9172 ms
+2023-02-25 00:40:31.317 +02:00 [INF] HTTP OPTIONS /api/users responded 204 in 0.0833 ms
+2023-02-25 00:40:31.330 +02:00 [INF] HTTP POST /api/users responded 201 in 6.5527 ms
+2023-02-25 00:40:31.342 +02:00 [INF] HTTP GET /api/users responded 200 in 6.1023 ms
+2023-02-25 00:42:55.738 +02:00 [INF] HTTP GET /api/users responded 200 in 19.4048 ms
+2023-02-25 00:43:08.879 +02:00 [INF] HTTP GET /api/users responded 200 in 26.5362 ms
+2023-02-25 00:43:37.146 +02:00 [INF] HTTP OPTIONS /api/users responded 204 in 0.0590 ms
+2023-02-25 00:43:37.189 +02:00 [INF] HTTP POST /api/users responded 201 in 23.1872 ms
+2023-02-25 00:43:37.211 +02:00 [INF] HTTP GET /api/users responded 200 in 9.4862 ms
+2023-02-25 00:44:00.699 +02:00 [INF] Now listening on: https://localhost:7210
+2023-02-25 00:44:00.737 +02:00 [INF] Now listening on: http://localhost:5252
+2023-02-25 00:44:00.744 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-02-25 00:44:00.746 +02:00 [INF] Hosting environment: Development
+2023-02-25 00:44:00.747 +02:00 [INF] Content root path: C:\Users\akaps\Documents\Visual Studio 2022\Projects\MT_LRS\WebAPI\
+2023-02-25 00:44:07.590 +02:00 [INF] HTTP GET /api/users responded 200 in 2114.2049 ms
+2023-02-25 00:44:17.486 +02:00 [INF] HTTP GET /api/users responded 200 in 100.4772 ms
+2023-02-25 00:47:48.696 +02:00 [INF] HTTP GET /api/users responded 200 in 74.2828 ms
+2023-02-25 17:44:48.687 +02:00 [INF] Now listening on: https://localhost:7210
+2023-02-25 17:44:48.749 +02:00 [INF] Now listening on: http://localhost:5252
+2023-02-25 17:44:48.755 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-02-25 17:44:48.758 +02:00 [INF] Hosting environment: Development
+2023-02-25 17:44:48.760 +02:00 [INF] Content root path: C:\Users\akaps\Documents\Visual Studio 2022\Projects\MT_LRS\WebAPI\
+2023-02-25 17:45:59.454 +02:00 [INF] HTTP GET /api/users responded 200 in 1896.7517 ms
+2023-02-25 17:46:37.727 +02:00 [INF] HTTP GET /api/users responded 200 in 62.3198 ms
+2023-02-25 17:49:39.116 +02:00 [INF] Now listening on: https://localhost:7210
+2023-02-25 17:49:39.166 +02:00 [INF] Now listening on: http://localhost:5252
+2023-02-25 17:49:39.171 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-02-25 17:49:39.172 +02:00 [INF] Hosting environment: Development
+2023-02-25 17:49:39.173 +02:00 [INF] Content root path: C:\Users\akaps\Documents\Visual Studio 2022\Projects\MT_LRS\WebAPI\
+2023-02-25 17:49:56.975 +02:00 [INF] HTTP GET /api/users responded 200 in 1979.9061 ms
+2023-02-25 17:53:51.903 +02:00 [INF] Now listening on: https://localhost:7210
+2023-02-25 17:53:51.967 +02:00 [INF] Now listening on: http://localhost:5252
+2023-02-25 17:53:51.973 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-02-25 17:53:51.975 +02:00 [INF] Hosting environment: Development
+2023-02-25 17:53:51.976 +02:00 [INF] Content root path: C:\Users\akaps\Documents\Visual Studio 2022\Projects\MT_LRS\WebAPI\
+2023-02-25 17:54:08.063 +02:00 [INF] Now listening on: https://localhost:7210
+2023-02-25 17:54:08.123 +02:00 [INF] Now listening on: http://localhost:5252
+2023-02-25 17:54:08.129 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-02-25 17:54:08.131 +02:00 [INF] Hosting environment: Development
+2023-02-25 17:54:08.133 +02:00 [INF] Content root path: C:\Users\akaps\Documents\Visual Studio 2022\Projects\MT_LRS\WebAPI\
+2023-02-25 17:54:32.125 +02:00 [INF] HTTP GET /api/users responded 200 in 1934.4045 ms
+2023-02-25 17:57:56.565 +02:00 [INF] Now listening on: https://localhost:7210
+2023-02-25 17:57:56.622 +02:00 [INF] Now listening on: http://localhost:5252
+2023-02-25 17:57:56.628 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-02-25 17:57:56.630 +02:00 [INF] Hosting environment: Development
+2023-02-25 17:57:56.631 +02:00 [INF] Content root path: C:\Users\akaps\Documents\Visual Studio 2022\Projects\MT_LRS\WebAPI\
+2023-02-25 17:58:22.966 +02:00 [INF] HTTP GET /api/users responded 200 in 3698.3237 ms
+2023-02-25 18:03:09.105 +02:00 [INF] Now listening on: https://localhost:7210
+2023-02-25 18:03:09.161 +02:00 [INF] Now listening on: http://localhost:5252
+2023-02-25 18:03:09.166 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-02-25 18:03:09.168 +02:00 [INF] Hosting environment: Development
+2023-02-25 18:03:09.170 +02:00 [INF] Content root path: C:\Users\akaps\Documents\Visual Studio 2022\Projects\MT_LRS\WebAPI\
+2023-02-25 18:16:32.696 +02:00 [INF] Now listening on: https://localhost:7210
+2023-02-25 18:16:32.782 +02:00 [INF] Now listening on: http://localhost:5252
+2023-02-25 18:16:32.789 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-02-25 18:16:32.797 +02:00 [INF] Hosting environment: Development
+2023-02-25 18:16:32.799 +02:00 [INF] Content root path: C:\Users\akaps\Documents\Visual Studio 2022\Projects\MT_LRS\WebAPI\
+2023-02-25 18:18:04.115 +02:00 [INF] HTTP GET /api/users responded 200 in 3316.2191 ms
+2023-02-25 18:18:54.688 +02:00 [INF] HTTP GET /api/users responded 200 in 75.1950 ms
+2023-02-25 18:26:07.316 +02:00 [INF] Now listening on: https://localhost:7210
+2023-02-25 18:26:07.369 +02:00 [INF] Now listening on: http://localhost:5252
+2023-02-25 18:26:07.375 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-02-25 18:26:07.377 +02:00 [INF] Hosting environment: Development
+2023-02-25 18:26:07.379 +02:00 [INF] Content root path: C:\Users\akaps\Documents\Visual Studio 2022\Projects\MT_LRS\WebAPI\
+2023-02-25 18:26:16.750 +02:00 [INF] HTTP GET /api/users responded 200 in 3089.9582 ms
+2023-02-25 18:29:44.480 +02:00 [INF] Now listening on: https://localhost:7210
+2023-02-25 18:29:44.535 +02:00 [INF] Now listening on: http://localhost:5252
+2023-02-25 18:29:44.542 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-02-25 18:29:44.544 +02:00 [INF] Hosting environment: Development
+2023-02-25 18:29:44.546 +02:00 [INF] Content root path: C:\Users\akaps\Documents\Visual Studio 2022\Projects\MT_LRS\WebAPI\
+2023-02-25 18:29:56.174 +02:00 [INF] HTTP GET /api/users responded 200 in 3139.0130 ms
+2023-02-25 18:29:56.174 +02:00 [INF] HTTP GET /api/users responded 200 in 335.2848 ms
+2023-02-25 19:54:37.607 +02:00 [INF] Now listening on: https://localhost:7210
+2023-02-25 19:54:37.665 +02:00 [INF] Now listening on: http://localhost:5252
+2023-02-25 19:54:37.671 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-02-25 19:54:37.673 +02:00 [INF] Hosting environment: Development
+2023-02-25 19:54:37.675 +02:00 [INF] Content root path: C:\Users\akaps\Documents\Visual Studio 2022\Projects\MT_LRS\WebAPI\
+2023-02-25 19:54:40.060 +02:00 [INF] HTTP GET /api/users responded 200 in 2187.0001 ms
+2023-02-25 19:57:20.829 +02:00 [INF] HTTP POST /api/users/16 responded 405 in 0.9761 ms
+2023-02-25 19:57:35.110 +02:00 [INF] HTTP POST /api/users/16 responded 405 in 2.3141 ms
+2023-02-25 19:57:58.795 +02:00 [INF] HTTP PUT /api/users/16 responded 400 in 133.8382 ms
+2023-02-25 19:58:09.456 +02:00 [INF] HTTP PUT /api/users/16 responded 200 in 457.3680 ms
+2023-02-25 19:58:37.038 +02:00 [INF] HTTP PUT /api/users/16 responded 200 in 79.5133 ms
+2023-02-25 19:59:06.640 +02:00 [INF] HTTP GET /api/users responded 200 in 29.7532 ms
+2023-02-25 20:00:11.335 +02:00 [INF] HTTP GET /api/users responded 200 in 6.6706 ms
+2023-02-25 20:01:55.420 +02:00 [INF] HTTP GET /api/users responded 200 in 24.6936 ms
+2023-02-25 20:05:49.313 +02:00 [INF] HTTP GET /api/users responded 200 in 28.4128 ms
+2023-02-25 20:06:42.656 +02:00 [INF] HTTP GET /api/users responded 200 in 18.6015 ms
+2023-02-25 20:07:06.054 +02:00 [INF] HTTP GET /api/users responded 200 in 15.5210 ms
+2023-02-25 20:21:09.130 +02:00 [INF] Now listening on: https://localhost:7210
+2023-02-25 20:21:09.183 +02:00 [INF] Now listening on: http://localhost:5252
+2023-02-25 20:21:09.190 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-02-25 20:21:09.193 +02:00 [INF] Hosting environment: Development
+2023-02-25 20:21:09.196 +02:00 [INF] Content root path: C:\Users\akaps\Documents\Visual Studio 2022\Projects\MT_LRS\WebAPI\
+2023-02-25 20:21:16.091 +02:00 [INF] HTTP GET /api/users responded 200 in 2063.9494 ms
+2023-02-25 20:22:06.074 +02:00 [INF] HTTP GET /api/users responded 200 in 88.8014 ms
+2023-02-25 20:25:32.747 +02:00 [INF] HTTP GET /api/users responded 200 in 177.0767 ms
+2023-02-25 20:25:38.091 +02:00 [INF] HTTP GET /api/users responded 200 in 6.7546 ms
+2023-02-25 20:25:56.359 +02:00 [INF] HTTP OPTIONS /api/users/15 responded 204 in 3.7542 ms
+2023-02-25 20:25:56.808 +02:00 [INF] HTTP PUT /api/users/15 responded 200 in 441.0761 ms
+2023-02-25 20:26:19.760 +02:00 [INF] HTTP GET /api/users responded 200 in 16.2220 ms
+2023-02-25 20:26:55.501 +02:00 [INF] HTTP OPTIONS /api/users/8 responded 204 in 0.0940 ms
+2023-02-25 20:26:55.556 +02:00 [INF] HTTP PUT /api/users/8 responded 400 in 20.2100 ms
+2023-02-25 20:26:56.538 +02:00 [INF] HTTP GET /api/users responded 200 in 20.5595 ms
+2023-02-25 20:26:59.510 +02:00 [INF] HTTP GET /api/users responded 200 in 8.2467 ms
+2023-02-25 20:27:34.193 +02:00 [INF] HTTP OPTIONS /api/users/8 responded 204 in 0.0591 ms
+2023-02-25 20:27:34.253 +02:00 [INF] HTTP PUT /api/users/8 responded 200 in 27.7516 ms
+2023-02-25 20:27:51.270 +02:00 [INF] HTTP GET /api/users responded 200 in 10.3351 ms
+2023-02-25 20:31:13.245 +02:00 [INF] Now listening on: https://localhost:7210
+2023-02-25 20:31:13.296 +02:00 [INF] Now listening on: http://localhost:5252
+2023-02-25 20:31:13.306 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-02-25 20:31:13.309 +02:00 [INF] Hosting environment: Development
+2023-02-25 20:31:13.312 +02:00 [INF] Content root path: C:\Users\akaps\Documents\Visual Studio 2022\Projects\MT_LRS\WebAPI\
+2023-02-25 20:31:15.571 +02:00 [INF] HTTP GET /api/users responded 200 in 2058.9986 ms
+2023-02-25 20:31:18.233 +02:00 [INF] HTTP GET /api/users responded 200 in 26.4229 ms
+2023-02-25 20:31:19.351 +02:00 [INF] HTTP GET /api/users responded 200 in 69.6475 ms
+2023-02-25 20:31:45.866 +02:00 [INF] HTTP OPTIONS /api/users/8 responded 204 in 2.7186 ms
+2023-02-25 20:31:45.894 +02:00 [INF] HTTP GET /api/users responded 200 in 17.8984 ms
+2023-02-25 20:31:46.482 +02:00 [INF] HTTP PUT /api/users/8 responded 200 in 596.3493 ms
+2023-02-25 20:31:49.025 +02:00 [INF] HTTP GET /api/users responded 200 in 18.3689 ms
+2023-02-25 20:32:36.777 +02:00 [INF] HTTP GET /api/users responded 200 in 7.5603 ms
+2023-02-25 20:32:57.094 +02:00 [INF] HTTP OPTIONS /api/users/8 responded 204 in 0.1033 ms
+2023-02-25 20:32:57.137 +02:00 [INF] HTTP PUT /api/users/8 responded 200 in 28.9403 ms
+2023-02-25 20:32:57.171 +02:00 [INF] HTTP GET /api/users responded 200 in 13.3560 ms
+2023-02-25 20:33:12.717 +02:00 [INF] HTTP GET /api/users responded 200 in 11.6171 ms
+2023-02-25 20:33:14.977 +02:00 [INF] HTTP GET /api/users responded 200 in 8.7339 ms
+2023-02-25 20:33:17.513 +02:00 [INF] HTTP GET /api/users responded 200 in 9.7015 ms
+2023-02-25 20:33:18.311 +02:00 [INF] HTTP GET /api/users responded 200 in 10.8031 ms
+2023-02-25 20:33:19.040 +02:00 [INF] HTTP GET /api/users responded 200 in 27.1661 ms
+2023-02-25 20:33:20.547 +02:00 [INF] HTTP GET /api/users responded 200 in 10.2893 ms
+2023-02-25 20:35:41.246 +02:00 [INF] Now listening on: https://localhost:7210
+2023-02-25 20:35:41.293 +02:00 [INF] Now listening on: http://localhost:5252
+2023-02-25 20:35:41.299 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-02-25 20:35:41.301 +02:00 [INF] Hosting environment: Development
+2023-02-25 20:35:41.303 +02:00 [INF] Content root path: C:\Users\akaps\Documents\Visual Studio 2022\Projects\MT_LRS\WebAPI\
+2023-02-25 20:35:49.108 +02:00 [INF] HTTP GET /api/users responded 200 in 2653.0893 ms
+2023-02-25 20:36:12.759 +02:00 [INF] HTTP OPTIONS /api/users/${selectedUser.id} responded 204 in 2.3061 ms
+2023-02-25 20:36:12.894 +02:00 [INF] HTTP DELETE /api/users/${selectedUser.id} responded 400 in 119.3005 ms
+2023-02-25 20:37:09.906 +02:00 [INF] HTTP GET /api/users responded 200 in 48.4591 ms
+2023-02-25 20:37:17.967 +02:00 [INF] HTTP OPTIONS /api/users/${selectedUser.id} responded 204 in 0.1374 ms
+2023-02-25 20:37:17.975 +02:00 [INF] HTTP DELETE /api/users/${selectedUser.id} responded 400 in 1.7264 ms
+2023-02-25 20:37:27.198 +02:00 [INF] HTTP GET /api/users responded 200 in 88.5258 ms
+2023-02-25 20:37:55.038 +02:00 [INF] HTTP DELETE /api/users/8 responded 200 in 517.5173 ms
+2023-02-25 20:38:09.128 +02:00 [INF] HTTP GET /api/users responded 200 in 8.8309 ms
+2023-02-25 20:38:21.105 +02:00 [INF] HTTP OPTIONS /api/users responded 204 in 0.8989 ms
+2023-02-25 20:38:21.340 +02:00 [INF] HTTP POST /api/users responded 201 in 225.7690 ms
+2023-02-25 20:38:21.366 +02:00 [INF] HTTP GET /api/users responded 200 in 14.8859 ms
+2023-02-25 20:38:53.964 +02:00 [INF] HTTP GET /api/users responded 200 in 25.8551 ms
+2023-02-25 20:39:00.183 +02:00 [INF] HTTP OPTIONS /api/users/1044 responded 204 in 0.0578 ms
+2023-02-25 20:39:00.207 +02:00 [INF] HTTP DELETE /api/users/1044 responded 200 in 16.3661 ms
+2023-02-25 20:39:00.225 +02:00 [INF] HTTP GET /api/users responded 200 in 9.4114 ms

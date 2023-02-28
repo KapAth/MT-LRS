@@ -1,0 +1,38 @@
+
+<div *ngIf=(selectedUser)>
+  <p>
+    ID: {{selectedUser.id}}<br />
+    Name : {{selectedUser.name}} <br />
+    Surname: {{selectedUser.surname}} <br />
+    Email: {{selectedUser.emailAddress}} <br />
+    Birth Date: {{selectedUser.birthDate}} <br />
+    Title: {{selectedUser.title}} <br />
+    Type: {{selectedUser.type}} <br />
+    Is Active: {{selectedUser.isActive}} <br />
+  </p>
+</div>
+
+<br />
+<form id="userForm" (ngSubmit)="UpdateUser()">
+  <div class="form-group">
+    <input required maxlength="20" class="form-control" type="text" name="AddNewUser" [(ngModel)]="_newUser.name" placeholder="Name" />
+  </div>
+
+  <div class="form-group">
+    <input required maxlength="20" class="form-control" type="text" name="AddNewUser" [(ngModel)]="_newUser.surname" placeholder="Surname" />
+  </div>
+
+  <div class="form-group">
+    <input required class="form-control" type="date" name="AddNewUser" [(ngModel)]="_newUser.birthDate" placeholder="BirthDate" />
+  </div>
+
+  <div class="form-group">
+    <input required maxlength="50" class="form-control" type="text" name="AddNewUser" [(ngModel)]="_newUser.emailAddress" placeholder="Email" />
+  </div>
+
+  <div>
+    <button class="btn-primary" type="submit">Update</button>
+    <button class="btn-primary" [routerLink]="['']">cancel</button>
+
+  </div>
+</form>
