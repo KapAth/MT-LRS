@@ -7,4 +7,4 @@ import { user } from './interfaces';
 })
 export class UserService {
   _selectedUser: user | undefined;
-}
+} // TODO what is this for?

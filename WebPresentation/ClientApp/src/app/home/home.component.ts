@@ -18,6 +18,7 @@ export class HomeComponent implements OnInit {
 
   usersArray: user[] = [];
 
+  // TODO find extension for typos
   sucessMessage = '';
 
   _selectedUser: user | undefined;
@@ -30,13 +31,14 @@ export class HomeComponent implements OnInit {
     emailAddress: '',
     userTitleId: 1,
     userTypeId: 4,
-    isActive:true
-    }
+    isActive: true
+  }
 
   constructor(private http: HttpClient, private userService: UserService) {
 
   }
 
+  // TODO should be done in the backend
   filterUsers() {
     if (this.searchQuery) {
 
@@ -62,6 +64,7 @@ export class HomeComponent implements OnInit {
 
   }
 
+  // TODO all user related functionality to separate component
   getUsers() {
 
     return this.http.get<user[]>('https://localhost:7210/api/users');
@@ -70,33 +73,35 @@ export class HomeComponent implements OnInit {
   detailsUser(selectedUser: user) {
     this._selectedUser = selectedUser;
     this.userService._selectedUser = this._selectedUser;
-   
+
   }
 
   async deleteUser(selectedUser: user) {
     if (selectedUser) {
-     let userToDelete: updatedUser = {
-         id : selectedUser.id,
-         name : selectedUser.name,
-         surname : selectedUser.surname,
-         birthDate : selectedUser.birthDate,
-         emailAddress : selectedUser.emailAddress,
-         isActive : false,
-         userTypeId: 4,
-         userTitleId: 1
-     };
+      let userToDelete: updatedUser = {
+        id: selectedUser.id,
+        name: selectedUser.name,
+        surname: selectedUser.surname,
+        birthDate: selectedUser.birthDate,
+        emailAddress: selectedUser.emailAddress,
+        isActive: false,
+        userTypeId: 4, // TODO no hard coded
+        userTitleId: 1
+      };
       console.log('https://localhost:7210/api/users/' + selectedUser.id);
-      
+
+      // TODO should be delete method
       await this.http.put('https://localhost:7210/api/users/' + userToDelete.id, userToDelete).toPromise();
       this.ngOnInit();
     }
   }
 
   addUser(newUser: newUser) {
-   return this.http.post('https://localhost:7210/api/users', newUser);
+    return this.http.post('https://localhost:7210/api/users', newUser);
   }
 
   createUser() {
+    // TODO this.userService.addUser();
     this.addUser(this._newUser).subscribe((data) => {
       this.sucessMessage = "User Added Successfully";
       /* Refresh the user list after successful addition*/
@@ -112,24 +117,10 @@ export class HomeComponent implements OnInit {
     this.showForm = !this.showForm;
     if (this.showForm) {
       const userForm = document.getElementById('userForm');
-      userForm?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      userForm?.scrollIntoView({behavior: 'smooth', block: 'start'});
     }
-    
-    }
-    
-  
+
+  }
+
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

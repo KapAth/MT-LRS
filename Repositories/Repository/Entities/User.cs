@@ -8,6 +8,9 @@ namespace Repositories.Repository.Entities
 {
     public  class User
     {
+        /// <summary>
+        /// TODO xml doc
+        /// </summary>
         public int Id { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }

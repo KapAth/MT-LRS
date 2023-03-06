@@ -29,6 +29,7 @@
   <button class="btn btn-primary" (click)="openUserForm()">Create New User</button>
   <div *ngIf="showForm">
 
+<!--    TODO should only show if available-->
     <div class="alert alert-success">
       {{sucessMessage}}
     </div>
@@ -55,7 +56,6 @@
       </div>
       <br />
     </form>
-    
-    
-  </div>
 
+
+  </div>

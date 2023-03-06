@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-
 using Repositories.Repository.Entities;
 
 namespace Repositories.Repository
@@ -11,7 +10,7 @@ namespace Repositories.Repository
         }
 
         public MTLRSDbContext(DbContextOptions<MTLRSDbContext> options)
-         : base(options)
+            : base(options)
         {
         }
 
@@ -19,15 +18,14 @@ namespace Repositories.Repository
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("data source=kapsimalis-nb;initial catalog=MT_LRSdb;trusted_connection=true;TrustServerCertificate=True;");
+                // TODO this should be a configuration setting and not hard coded
+                optionsBuilder.UseSqlServer(
+                    "data source=kapsimalis-nb;initial catalog=MT_LRSdb;trusted_connection=true;TrustServerCertificate=True;");
             }
         }
 
         public virtual DbSet<User> User { get; set; }
         public virtual DbSet<UserTitle> UserTitle { get; set; }
-        public virtual DbSet<UserType> UserType
-        {
-            get; set;
-        }
+        public virtual DbSet<UserType> UserType { get; set; }
     }
 }

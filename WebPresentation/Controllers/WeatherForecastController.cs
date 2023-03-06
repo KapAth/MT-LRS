@@ -2,6 +2,7 @@
 
 namespace WebPresentation.Controllers
 {
+    // TODO unused code
     [ApiController]
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase

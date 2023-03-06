@@ -8,7 +8,7 @@ namespace WebApiTest.Moq
     [TestClass]
     public class UserLogicTests
     {
-
+        // TODO there is a TestInitialize to avoid duplicate initialization
         [TestMethod]
         public async Task GetUserById_ReturnsUser()
         {
@@ -23,11 +23,13 @@ namespace WebApiTest.Moq
             // Act
             var result = await userLogic.GetUserById(1);
 
-            // Assert
+            // Assert TODO FluentAssertions
             Assert.IsNotNull(result);
             Assert.AreEqual(expectedUser.Id, result.Id);
             Assert.AreEqual(expectedUser.Name, result.Name);
             Assert.AreEqual(expectedUser.Surname, result.Surname);
+            mockDAL.Verify(x => x.GetUserById(It.IsAny<int>()), Times.Once);
+            mockDAL.VerifyNoOtherCalls();
         }
 
         [TestMethod]

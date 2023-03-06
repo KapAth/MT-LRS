@@ -1,4 +1,6 @@
 
+// TODO separate file per model
+// Better name them as IUser
 export interface user {
   id: number;
   name: string;

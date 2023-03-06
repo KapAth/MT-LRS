@@ -10,14 +10,17 @@ namespace WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    // TODO follow same naming style
+    // TODO all methods returning User data should return a DTO. Use of Automapper
     public class UsersController : ControllerBase
     {
-        private Services.UserLogic _BLL;
+        private Services.UserLogic _BLL; // TODO avoid abbreviations
         private readonly ILogger<UsersController> _logger;
 
 
         public UsersController(ILogger<UsersController> logger)
         {
+            // TODO should be injected, you need an interface for this
             _BLL = new Services.UserLogic();
             _logger = logger;
         }
@@ -83,7 +86,7 @@ namespace WebAPI.Controllers
         public async Task<IActionResult> DeleteUser(int id)
         {
             var user = await _BLL.DeleteUser(id);
-            if (user == null)
+            if (user == null) // TODO since you have not declared return as nullable this is pointless. change return to nullable
             {
                 _logger.LogWarning("User {id} not found", id);
                 return BadRequest("Invalid ID");

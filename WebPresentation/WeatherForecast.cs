@@ -1,5 +1,6 @@
 namespace WebPresentation
 {
+    // TODO unused code
     public class WeatherForecast
     {
         public DateTime Date { get; set; }

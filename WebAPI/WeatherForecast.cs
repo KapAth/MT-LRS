@@ -2,6 +2,7 @@ namespace WebAPI
 {
     public class WeatherForecast
     {
+        // TODO unused code
         public DateTime Date { get; set; }
 
         public int TemperatureC { get; set; }
