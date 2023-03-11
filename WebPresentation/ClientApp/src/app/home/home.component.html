@@ -1,0 +1,61 @@
+
+  <input type="text" placeholder="search" [(ngModel)]="searchQuery" (input)="filterUsers()" />
+  <div style="background-color:aliceblue">
+    <table style="border-collapse:collapse; width:100%;">
+      <thead>
+        <tr style="border:1px solid black; padding:8px; text-align:left; font-weight:bold;">
+          <th>Name</th>
+          <th>Surname</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <ng-container *ngFor="let user of usersArray">
+          <ng-container *ngIf="user.isActive">
+            <tr style="border:1px solid black; padding:8px; text-align:left; font-weight:bold;">
+              <td>{{ user.name }}</td>
+              <td>{{ user.surname }}</td>
+              <td><button style="margin-right:40px;" class="btn" (click)="detailsUser(user)" [routerLink]="['/user-details']">Details & Edit</button>
+              <button class="btn" (click)="deleteUser(user)">delete</button></td>
+            </tr>
+          </ng-container>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+
+  <!--<button class="btn btn-primary" (click)="createUserTest()">Create New User</button>-->
+  <button class="btn btn-primary" (click)="openUserForm()">Create New User</button>
+  <div *ngIf="showForm">
+
+<!--    TODO should only show if available-->
+    <div class="alert alert-success">
+      {{sucessMessage}}
+    </div>
+
+    <form id="userForm" (ngSubmit)="createUser()">
+      <div class="form-group">
+        <input required maxlength="20" class="form-control" type="text" name="AddNewUser" [(ngModel)]="_newUser.name" placeholder="Name"/>
+      </div>
+
+      <div class="form-group">
+        <input required maxlength="20" class="form-control" type="text" name="AddNewUser" [(ngModel)]="_newUser.surname" placeholder="Surname" />
+      </div>
+
+      <div class="form-group">
+        <input required class="form-control" type="date" name="AddNewUser" [(ngModel)]="_newUser.birthDate" placeholder="BirthDate" />
+      </div>
+
+      <div class="form-group">
+        <input required maxlength="50" class="form-control" type="text" name="AddNewUser" [(ngModel)]="_newUser.emailAddress" placeholder="Email"/>
+      </div>
+
+      <div>
+        <button class="btn-primary" type="submit">Add</button>
+      </div>
+      <br />
+    </form>
+
+
+  </div>
