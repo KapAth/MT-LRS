@@ -1,0 +1,5 @@
+# Ignore logs directory
+/WebAPI/logs/
+
+# Ignore cache directory
+/WebPresentation/ClientApp/.angular/cache/
