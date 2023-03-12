@@ -14,16 +14,6 @@ namespace Repositories.Repository
         {
         }
 
-        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //{
-        //    if (!optionsBuilder.IsConfigured)
-        //    {
-        //        // TODO this should be a configuration setting and not hard coded
-        //        optionsBuilder.UseSqlServer(
-        //            "data source=kapsimalis-nb;initial catalog=MT_LRSdb;trusted_connection=true;TrustServerCertificate=True;");
-        //    }
-        //}
-
         public virtual DbSet<User> User { get; set; }
         public virtual DbSet<UserTitle> UserTitle { get; set; }
         public virtual DbSet<UserType> UserType { get; set; }
