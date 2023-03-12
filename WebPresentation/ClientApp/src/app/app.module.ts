@@ -9,6 +9,7 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
 import { userdetailsComponent } from './user-details/user-details.component';
 import { MapComponent } from './map/map.component';
+import { UsersComponent } from './users/users.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { MapComponent } from './map/map.component';
     NavMenuComponent,
     HomeComponent,
     userdetailsComponent,
-   
+    UsersComponent,
+
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -24,6 +26,7 @@ import { MapComponent } from './map/map.component';
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
+      { path: 'users', component: UsersComponent },
       { path: 'user-details', component: userdetailsComponent },
       { path: 'map', component: MapComponent },
     ])
