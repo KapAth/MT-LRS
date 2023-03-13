@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using Repositories;
 using Repositories.Repository.Entities;
 using WebAPI.Models;
 using WebAPI.Repositories.Interfaces;
@@ -12,7 +11,7 @@ namespace Services
         private readonly IUsersRepository _userRepository;
         private readonly IMapper _mapper;
 
-        public UserService(UsersRepository userRepo, IMapper mapper)
+        public UserService(IUsersRepository userRepo, IMapper mapper)
         {
             _userRepository = userRepo;
             _mapper = mapper;
@@ -93,7 +92,7 @@ namespace Services
 
                 if (!string.IsNullOrEmpty(userDto.EmailAddress) && userDto.EmailAddress.Length > 50)
                 {
-                    throw new ArgumentNullException(nameof(userDto.UserTitleId), "Email Address cannot be greater than 50 characters");
+                    throw new ArgumentOutOfRangeException(nameof(userDto.UserTitleId), "Email Address cannot be greater than 50 characters");
                 }
                 User user = _mapper.Map<User>(userDto);
                 await _userRepository.AddNewUserAsync(user);

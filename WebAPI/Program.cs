@@ -6,7 +6,9 @@ using Services;
 using WebAPI.Configurations;
 using WebAPI.Middleware;
 using WebAPI.Repositories;
+using WebAPI.Repositories.Interfaces;
 using WebAPI.Services;
+using WebAPI.Services.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -30,13 +32,13 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowAll", b => b.AllowAnyHeader().AllowAnyOrigin().AllowAnyMethod());
 });
 
-builder.Services.AddScoped<UserService>();
-builder.Services.AddScoped<UserTitlesService>();
-builder.Services.AddScoped<UserTypesService>();
+builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IUserTitlesService, UserTitlesService>();
+builder.Services.AddScoped<IUserTypesService, UserTypesService>();
 //ensures that each request has its own separate database context and avoids concurrency and data consistency issues
-builder.Services.AddScoped<UsersRepository>();
-builder.Services.AddScoped<UserTitlesRepository>();
-builder.Services.AddScoped<UserTypesRepository>();
+builder.Services.AddScoped<IUsersRepository, UsersRepository>();
+builder.Services.AddScoped<IUserTitlesRepository, UserTitlesRepository>();
+builder.Services.AddScoped<IUserTypesRepository, UserTypesRepository>();
 
 //in order to use serilog
 builder.Host.UseSerilog((ctx, lc) => lc.WriteTo.Console().ReadFrom.Configuration(ctx.Configuration));

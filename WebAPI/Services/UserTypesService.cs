@@ -13,7 +13,7 @@ namespace WebAPI.Services
         private readonly IUserTypesRepository _userTypesRepository;
         private readonly IMapper _mapper;
 
-        public UserTypesService(UserTypesRepository userTypesRepo, IMapper mapper)
+        public UserTypesService(IUserTypesRepository userTypesRepo, IMapper mapper)
         {
             _userTypesRepository = userTypesRepo;
             _mapper = mapper;

@@ -3,6 +3,7 @@ using Repositories.Repository;
 using Repositories.Repository.Entities;
 using Services;
 using WebAPI.Models;
+using WebAPI.Services.Interfaces;
 
 namespace WebAPI.Controllers
 {
@@ -10,9 +11,9 @@ namespace WebAPI.Controllers
     [ApiController]
     public class UsersController : ControllerBase
     {
-        private readonly UserService _userService;
+        private readonly IUserService _userService;
 
-        public UsersController(UserService userservice)
+        public UsersController(IUserService userservice)
         {
             _userService = userservice;
         }

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using WebAPI.Models;
 using WebAPI.Services;
+using WebAPI.Services.Interfaces;
 
 namespace WebAPI.Controllers
 {
@@ -8,9 +9,9 @@ namespace WebAPI.Controllers
     [ApiController]
     public class UserTypesController : ControllerBase
     {
-        private readonly UserTypesService _userTypesService;
+        private readonly IUserTypesService _userTypesService;
 
-        public UserTypesController(UserTypesService userTypesService)
+        public UserTypesController(IUserTypesService userTypesService)
         {
             _userTypesService = userTypesService;
         }

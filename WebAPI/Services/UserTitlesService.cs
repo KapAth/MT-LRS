@@ -11,7 +11,7 @@ namespace WebAPI.Services
         private readonly IUserTitlesRepository _userTitlesRepository;
         private readonly IMapper _mapper;
 
-        public UserTitlesService(UserTitlesRepository userTitlesRepo, IMapper mapper)
+        public UserTitlesService(IUserTitlesRepository userTitlesRepo, IMapper mapper)
         {
             _userTitlesRepository = userTitlesRepo;
             _mapper = mapper;
