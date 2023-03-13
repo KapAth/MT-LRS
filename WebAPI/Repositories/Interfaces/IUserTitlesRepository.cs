@@ -7,7 +7,7 @@ namespace WebAPI.Repositories.Interfaces
         /// <summary>
         /// Gets all user titles asynchronous.
         /// </summary>
-        /// <returns>A list of User Titles</returns>
+        /// <returns>A list of User Titles <see cref="UserTitle"/></returns>
         Task<List<UserTitle>> GetAllUserTitlesAsync();
 
         /// <summary>

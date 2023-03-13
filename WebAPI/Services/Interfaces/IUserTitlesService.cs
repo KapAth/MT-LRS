@@ -7,14 +7,14 @@ namespace WebAPI.Services.Interfaces
         /// <summary>
         /// Gets all user titles dto asynchronous.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>A list of User Titles <see cref="UserTitleDto"/></returns>
         Task<List<UserTitleDto>> GetAllUserTitlesDtoAsync();
 
         /// <summary>
         /// Gets the user title dto by identifier asynchronous.
         /// </summary>
         /// <param name="id">The identifier.</param>
-        /// <returns><see cref="UserDto"/></returns>
+        /// <returns>A single User Title<see cref="UserTitleDto"/></returns>
         Task<UserTitleDto> GetUserTitleDtoByIdAsync(int id);
     }
 }

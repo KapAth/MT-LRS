@@ -16,8 +16,6 @@ namespace WebApiTest.Moq
         private Mock<IMapper> _mapperMock = null!;
         private UserService _userService = null!;
 
-        // TODO there is a TestInitialize to avoid duplicate initialization
-
         [TestInitialize]
         public void Initialize()
         {
@@ -100,10 +98,10 @@ namespace WebApiTest.Moq
             var expectedUser = new User { Id = 1, Name = "NewName", Surname = "NewSurname" };
 
             _mapperMock.Setup(m => m.Map<User>(userDto)).Returns(expectedUser);
-            _userRepositoryMock.Setup(r => r.PutUserAsync(1, expectedUser)).Returns(Task.CompletedTask);
+            _userRepositoryMock.Setup(r => r.PutUserAsync(1, expectedUser));
 
             // Act
-            await _userService.PutUserDtoAsync(1, userDto);
+            await _userService.PutUserDtoAsync(userDto.Id, userDto);
 
             // Assert
             _userRepositoryMock.Verify(r => r.PutUserAsync(1, expectedUser), Times.Once);
@@ -227,7 +225,7 @@ namespace WebApiTest.Moq
         {
             // Arrange
             int userId = 1;
-            _userRepositoryMock.Setup(x => x.DeleteUserAsync(userId)).Returns(Task.CompletedTask);
+            _userRepositoryMock.Setup(x => x.DeleteUserAsync(userId));
 
             // Act
             await _userService.DeleteUserAsync(userId);

@@ -9,14 +9,14 @@ namespace WebAPI.Repositories.Interfaces
         /// <summary>
         /// Gets the user types.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>A list of User Types <see cref="UserType"/></returns>
         Task<List<UserType>> GetAllUserTypesAsync();
 
         /// <summary>
         /// Gets the type of the user.
         /// </summary>
         /// <param name="id">The identifier.</param>
-        /// <returns></returns>
+        /// <returns>A single <see cref="UserType"/></returns>
         Task<UserType> GetUserTypeAsync(int id);
     }
 }

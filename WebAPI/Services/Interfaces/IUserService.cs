@@ -15,7 +15,7 @@ namespace WebAPI.Services.Interfaces
         /// Gets all users.
         /// </summary>
         /// <returns>
-        /// A list of Users, Type :<see cref="UserDto" />
+        /// A list of Users <see cref="UserDto" />
         /// </returns>
         Task<List<UserDto>> GetAllUsersDtoAsync();
 
@@ -23,7 +23,7 @@ namespace WebAPI.Services.Interfaces
         /// Gets the user dto by identifier asynchronous.
         /// </summary>
         /// <param name="id">The identifier.</param>
-        /// <returns><see cref="UserDto"/></returns>
+        /// <returns>A single User <see cref="UserDto"/></returns>
         Task<UserDto> GetUserDtoByIdAsync(int id);
 
         /// <summary>Updates the user with ID.</summary>

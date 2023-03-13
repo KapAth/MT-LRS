@@ -8,14 +8,14 @@ namespace WebAPI.Services.Interfaces
         /// <summary>
         /// Gets the user types asynchronous.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>A list of UserTypes <see cref="UserTypeDto"/></returns>
         Task<List<UserTypeDto>> GetAllUserTypesDtoAsync();
 
         /// <summary>
         /// Gets the user type asynchronous.
         /// </summary>
         /// <param name="id">The identifier.</param>
-        /// <returns></returns>
+        /// <returns>A single UserType <see cref="UserTypeDto"/></returns>
         Task<UserTypeDto> GetUserTypeDtoByIdAsync(int id);
     }
 }
