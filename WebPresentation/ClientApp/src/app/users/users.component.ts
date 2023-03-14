@@ -1,5 +1,8 @@
 import { Component, OnInit } from "@angular/core";
-import { newUser, user } from '../interfaces';
+import { INewUser } from "../interfaces/INewUser";
+import { IUser } from "../interfaces/IUser";
+import { IUserTitle } from "../interfaces/IUserTitle";
+import { IUserType } from "../interfaces/IUserType";
 import { UserService } from '../user.service';
 
 @Component({
@@ -12,20 +15,21 @@ export class UsersComponent implements OnInit {
 
   showForm = false;
 
-  usersArray: user[] = [];
+  usersArray: IUser[] = [];
+  titlesArray: IUserTitle[] = [];
+  typesArray: IUserType[] = [];
 
-  // TODO find extension for typos
   successMessage = '';
 
-  _selectedUser: user | undefined;
+  _selectedUser: IUser | undefined;
 
-  _newUser: newUser = {
+  _newUser: INewUser = {
     name: '',
     surname: '',
     birthDate: new Date(),
     emailAddress: '',
-    userTitleId: 1,
-    userTypeId: 4,
+    userTitleId: 0,
+    userTypeId: 0,
     isActive: true
   }
 
@@ -49,12 +53,12 @@ export class UsersComponent implements OnInit {
     })
   }
 
-  detailsUser(selectedUser: user) {
+  detailsUser(selectedUser: IUser) {
     this._selectedUser = selectedUser;
     this.userService._selectedUser = this._selectedUser;
   }
 
-  async deleteUser(selectedUser: user) {
+  async deleteUser(selectedUser: IUser) {
     if (selectedUser) {
       console.log(selectedUser);
       await this.userService.deleteUser(selectedUser.id).subscribe({
@@ -90,11 +94,24 @@ export class UsersComponent implements OnInit {
     });
   }
 
-  openUserForm() {
+  async openUserForm() {
     this.showForm = !this.showForm;
     if (this.showForm) {
       const userForm = document.getElementById('userForm');
       userForm?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+      await this.userService.getUserTitles().subscribe({
+        next: (titles) => {
+          this.titlesArray = titles;
+        }
+      });
+
+      await this.userService.getUserTypes().subscribe({
+        next: (types) => {
+          this.typesArray = types;
+          console.log(this.typesArray);
+        }
+      });
     }
   }
 }

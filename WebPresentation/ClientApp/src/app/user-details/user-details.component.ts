@@ -1,7 +1,7 @@
-import { HttpClient } from "@angular/common/http";
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from "@angular/core";
-import { Router, RouterModule } from '@angular/router';
-import { updatedUser, user } from "../interfaces";
+import { Component, OnInit } from "@angular/core";
+import { Router } from '@angular/router';
+import { IUpdatedUser } from "../interfaces/IUpdatedUser";
+import { IUser } from "../interfaces/IUser";
 import { UserService } from "../user.service";
 
 @Component({
@@ -9,15 +9,13 @@ import { UserService } from "../user.service";
   templateUrl: './user-details.component.html',
 })
 
-// TODO PascalCase naming on components
-export class userdetailsComponent implements OnInit {
+export class UserdetailsComponent implements OnInit {
+  constructor(private userService: UserService, private router: Router) { }
 
-  constructor(private userService: UserService, private http: HttpClient, private router: Router) { }
+  selectedUser: IUser | undefined;
 
-  selectedUser: user | undefined;
-
-  _newUser: updatedUser = {
-    id:0,
+  _newUser: IUpdatedUser = {
+    id: 0,
     name: '',
     surname: '',
     birthDate: new Date(),
@@ -26,27 +24,16 @@ export class userdetailsComponent implements OnInit {
     userTypeId: 4,
     isActive: true
   }
-    // TODO single spacing
 
   async UpdateUser() {
     if (this.selectedUser) {
       this._newUser.id = this.selectedUser.id;
-      console.log(this._newUser);
-
-      // TODO you should call a service and the service should use the http client. also base url should be configurable per environment.
-      await this.http.put('https://localhost:7210/api/users/' + this.selectedUser.id, this._newUser).toPromise();
-      this.router.navigate(['']);
-
+      await this.userService.putUser(this.selectedUser.id, this._newUser).subscribe();
+      this.router.navigate(['/users']);
     }
   }
 
   ngOnInit(): void {
-   this.selectedUser = this.userService._selectedUser;
-    console.log(this.selectedUser); // TODO no console logs on finished code
-
-
+    this.selectedUser = this.userService._selectedUser;
   }
-
-
-
 }

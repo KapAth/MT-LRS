@@ -26,11 +26,9 @@
   </table>
 </div>
 
-<!--<button class="btn btn-primary" (click)="createUserTest()">Create New User</button>-->
 <button class="btn btn-primary" (click)="openUserForm()">Create New User</button>
 <div *ngIf="showForm">
 
-  <!--    TODO should only show if available-->
   <div *ngIf="successMessage" class="alert alert-success">
     {{successMessage}}
   </div>
@@ -51,6 +49,14 @@
     <div class="form-group">
       <input required maxlength="50" class="form-control" type="text" name="AddNewUser" [(ngModel)]="_newUser.emailAddress" placeholder="Email" />
     </div>
+
+    <select class="form-control" name="title" [(ngModel)]="_newUser.userTitleId">
+      <option *ngFor="let title of titlesArray" [value]="title.id">{{ title.description }}</option>
+    </select>
+
+    <select class="form-control" name="type" [(ngModel)]="_newUser.userTypeId">
+      <option *ngFor="let type of typesArray" [value]="type.id">{{ type.description }} , {{type.code}}</option>
+    </select>
 
     <div>
       <button class="btn-primary" type="submit">Add</button>

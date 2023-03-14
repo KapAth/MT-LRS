@@ -7,7 +7,7 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
-import { userdetailsComponent } from './user-details/user-details.component';
+import { UserdetailsComponent } from './user-details/user-details.component';
 import { MapComponent } from './map/map.component';
 import { UsersComponent } from './users/users.component';
 import { UserService } from './user.service';
@@ -17,7 +17,7 @@ import { UserService } from './user.service';
     AppComponent,
     NavMenuComponent,
     HomeComponent,
-    userdetailsComponent,
+    UserdetailsComponent,
     UsersComponent,
    
 
@@ -29,7 +29,7 @@ import { UserService } from './user.service';
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'users', component: UsersComponent },
-      { path: 'user-details', component: userdetailsComponent },
+      { path: 'user-details', component: UserdetailsComponent },
       { path: 'map', component: MapComponent },
     ])
   ],
