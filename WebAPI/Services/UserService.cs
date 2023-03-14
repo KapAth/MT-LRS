@@ -21,9 +21,9 @@ namespace Services
         /// <returns>
         ///  A list of Users <see cref="User"/>
         /// </returns>
-        public async Task<List<UserDto>> GetAllUsersDtoAsync()
+        public async Task<List<UserDto>> GetAllUsersDtoAsync(string? filter = null)
         {
-            var users = await _userRepository.GetAllUsersAsync();
+            var users = await _userRepository.GetAllUsersAsync(filter);
             var userDtos = _mapper.Map<List<UserDto>>(users);
             return userDtos;
         }

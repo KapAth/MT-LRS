@@ -20,9 +20,9 @@ namespace WebAPI.Controllers
 
         // GET: api/Users
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<UserDto>>> GetUser()
+        public async Task<ActionResult<IEnumerable<UserDto>>> GetUser(string? filter = null)
         {
-            return await _userService.GetAllUsersDtoAsync();
+            return await _userService.GetAllUsersDtoAsync(filter);
         }
 
         // GET: api/Users/5

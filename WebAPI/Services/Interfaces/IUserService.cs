@@ -12,12 +12,11 @@ namespace WebAPI.Services.Interfaces
         Task AddNewUserDtoAsync(UserDto userDto);
 
         /// <summary>
-        /// Gets all users.
+        /// Gets all users dto asynchronous.
         /// </summary>
-        /// <returns>
-        /// A list of Users <see cref="UserDto" />
-        /// </returns>
-        Task<List<UserDto>> GetAllUsersDtoAsync();
+        /// <param name="filter">The filter.</param>
+        /// <returns> A list of Users <see cref="UserDto"/></returns>
+        Task<List<UserDto>> GetAllUsersDtoAsync(string? filter = null);
 
         /// <summary>
         /// Gets the user dto by identifier asynchronous.

@@ -18,9 +18,16 @@ namespace Repositories
         /// <returns>
         /// A list of Users <see cref="User"/>
         /// </returns>
-        public async Task<List<User>> GetAllUsersAsync()
+        public async Task<List<User>> GetAllUsersAsync(string? filter = null)
         {
-            var users = await _context.User.ToListAsync();
+            IQueryable<User> query = _context.User;
+
+            if (!string.IsNullOrEmpty(filter))
+            {
+                query = query.Where(u => (u.Name != null && u.Name.Contains(filter)) || (u.Surname != null && u.Surname.Contains(filter)));
+            }
+
+            var users = await query.ToListAsync();
 
             return users;
         }

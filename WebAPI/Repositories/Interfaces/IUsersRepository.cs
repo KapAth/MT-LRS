@@ -9,11 +9,12 @@ namespace WebAPI.Repositories.Interfaces
         /// <param name="user">The user.</param>
         Task AddNewUserAsync(User user);
 
-        /// <summary>Gets all users.</summary>
-        /// <returns>
-        ///  A list of Users <see cref="User"/>
-        /// </returns>
-        Task<List<User>> GetAllUsersAsync();
+        /// <summary>
+        /// Gets all users asynchronous.
+        /// </summary>
+        /// <param name="filter">The filter for name or surname.</param>
+        /// <returns> A list of Users <see cref="User"/></returns>
+        Task<List<User>> GetAllUsersAsync(string? filter = null);
 
         /// <summary>Gets the user by ID.</summary>
         /// <param name="id">The identifier.</param>
