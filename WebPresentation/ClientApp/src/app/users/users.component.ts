@@ -31,13 +31,11 @@ export class UsersComponent implements OnInit {
 
   constructor(private userService: UserService) { }
 
-  // TODO should be done in the backend
   filterUsers() {
     if (this.searchQuery) {
-      this.usersArray = this.usersArray.filter(user => {
-        return user.name.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
-          user.surname.toLowerCase().includes(this.searchQuery.toLowerCase());
-      });
+      this.userService.getUsersWithFilter(this.searchQuery).subscribe(users => {
+        this.usersArray = users;
+      })
     } else {
       this.userService.getUsers().subscribe(users => {
         this.usersArray = users;

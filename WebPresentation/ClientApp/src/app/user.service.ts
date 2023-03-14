@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ApiPaths, environment } from 'src/environments/environment';
-import { newUser,user } from './interfaces';
+import { newUser, user } from './interfaces';
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +16,11 @@ export class UserService {
 
   getUsers() {
     return this.http.get<user[]>(`${this.apiUsers}`);
+  }
+
+  getUsersWithFilter(filter: string) {
+    console.log(`${this.apiUsers}?filter=${filter}`)
+    return this.http.get<user[]>(`${this.apiUsers}?filter=${filter}`)
   }
 
   postUser(newUser: newUser) {
