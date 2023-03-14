@@ -14,7 +14,6 @@ namespace Repositories
             _context = context;
         }
 
-        //TODO xml doc on interfaces
         /// <summary>Gets all users.</summary>
         /// <returns>
         /// A list of Users <see cref="User"/>
@@ -54,7 +53,6 @@ namespace Repositories
                 throw new ArgumentException("User not found");
             }
             _context.Entry(existingUser).CurrentValues.SetValues(user);
-            //  _context.Entry(user).State = EntityState.Modified;
             await _context.SaveChangesAsync();
         }
 

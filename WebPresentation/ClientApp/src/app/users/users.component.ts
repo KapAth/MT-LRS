@@ -1,6 +1,5 @@
 import { Component, OnInit } from "@angular/core";
 import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
 import { newUser, updatedUser, user } from '../interfaces';
 import { UserService } from '../user.service';
 
@@ -17,10 +16,9 @@ export class UsersComponent implements OnInit {
   usersArray: user[] = [];
 
   // TODO find extension for typos
-  sucessMessage = '';
+  successMessage = '';
 
   _selectedUser: user | undefined;
-  /*userToDelete!: updatedUser;*/
 
   _newUser: newUser = {
     name: '',
@@ -32,8 +30,7 @@ export class UsersComponent implements OnInit {
     isActive: true
   }
 
-  constructor(private http: HttpClient, private userService: UserService) {
-  }
+  constructor(private userService: UserService) { }
 
   // TODO should be done in the backend
   filterUsers() {
@@ -43,21 +40,16 @@ export class UsersComponent implements OnInit {
           user.surname.toLowerCase().includes(this.searchQuery.toLowerCase());
       });
     } else {
-      this.getUsers().subscribe(users => {
+      this.userService.getUsers().subscribe(users => {
         this.usersArray = users;
       })
     }
   }
 
   ngOnInit(): void {
-    this.getUsers().subscribe(users => {
+    this.userService.getUsers().subscribe(users => {
       this.usersArray = users;
     })
-  }
-
-  // TODO all user related functionality to separate component
-  getUsers() {
-    return this.http.get<user[]>('https://localhost:7210/api/users');
   }
 
   detailsUser(selectedUser: user) {
@@ -67,38 +59,37 @@ export class UsersComponent implements OnInit {
 
   async deleteUser(selectedUser: user) {
     if (selectedUser) {
-      let userToDelete: updatedUser = {
-        id: selectedUser.id,
-        name: selectedUser.name,
-        surname: selectedUser.surname,
-        birthDate: selectedUser.birthDate,
-        emailAddress: selectedUser.emailAddress,
-        isActive: false,
-        userTypeId: 4, // TODO no hard coded
-        userTitleId: 1
-      };
-      console.log('https://localhost:7210/api/users/' + selectedUser.id);
-
-      // TODO should be delete method
-      await this.http.put('https://localhost:7210/api/users/' + userToDelete.id, userToDelete).toPromise();
-      this.ngOnInit();
+      console.log(selectedUser);
+      await this.userService.deleteUser(selectedUser.id).subscribe({
+        next: () => {
+          /* Refresh the user list after successful deletion*/
+          this.userService.getUsers().subscribe({
+            next: (users) => {
+              this.usersArray = users;
+            }
+          });
+        }
+      });
     }
   }
 
-  addUser(newUser: newUser) {
-    return this.http.post('https://localhost:7210/api/users', newUser);
-  }
-
   createUser() {
-    // TODO this.userService.addUser();
-    this.addUser(this._newUser).subscribe((data) => {
-      this.sucessMessage = "User Added Successfully";
-      /* Refresh the user list after successful addition*/
-      this.getUsers().subscribe(users => {
-        this.usersArray = users;
-      });
-    }, error => {
-      this.sucessMessage = error;
+    this.userService.postUser(this._newUser).subscribe({
+      next: () => {
+        this.successMessage = "User Added Successfully";
+        /* Refresh the user list after successful addition*/
+        this.userService.getUsers().subscribe({
+          next: (users) => {
+            this.usersArray = users;
+          },
+          error: (error) => {
+            this.successMessage = error;
+          },
+        });
+      },
+      error: (error) => {
+        this.successMessage = error;
+      },
     });
   }
 

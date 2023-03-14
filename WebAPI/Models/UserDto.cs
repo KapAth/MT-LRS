@@ -1,6 +1,4 @@
-﻿// TODO cleanup imports
-// TODO why is the DTO in repositories project?
-namespace WebAPI.Models
+﻿namespace WebAPI.Models
 {
     public class UserDto
     {
@@ -67,8 +65,5 @@ namespace WebAPI.Models
         /// The user title identifier.
         /// </value>
         public int UserTitleId { get; set; }
-
-        // public string? Title { get; set; } // TODO should return only the id of the title
-        // public string? Type { get; set; } // TODO should return only the id of the type
     }
 }

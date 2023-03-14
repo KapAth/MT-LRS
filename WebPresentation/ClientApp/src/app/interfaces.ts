@@ -1,15 +1,14 @@
-
 // TODO separate file per model
 // Better name them as IUser
 export interface user {
   id: number;
   name: string;
   surname: string;
-  emailAddress: string;
-  title: string;
-  type: string;
   birthDate: Date;
+  emailAddress: string;
   isActive: boolean;
+  userTypeId: number,
+  userTitleId: number
 }
 export interface newUser {
   name: string,

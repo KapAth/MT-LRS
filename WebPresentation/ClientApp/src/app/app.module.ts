@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { userdetailsComponent } from './user-details/user-details.component';
 import { MapComponent } from './map/map.component';
 import { UsersComponent } from './users/users.component';
+import { UserService } from './user.service';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { UsersComponent } from './users/users.component';
     HomeComponent,
     userdetailsComponent,
     UsersComponent,
+   
 
   ],
   imports: [
@@ -31,7 +33,7 @@ import { UsersComponent } from './users/users.component';
       { path: 'map', component: MapComponent },
     ])
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
