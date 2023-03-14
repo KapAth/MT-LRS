@@ -1,6 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { HttpClient } from '@angular/common/http';
-import { newUser, updatedUser, user } from '../interfaces';
+import { newUser, user } from '../interfaces';
 import { UserService } from '../user.service';
 
 @Component({
