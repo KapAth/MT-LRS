@@ -77,12 +77,12 @@ namespace Services
             {
                 if (userDto.UserTypeId <= 0)
                 {
-                    throw new ArgumentNullException(nameof(userDto.UserTypeId), "Invalid UserTypeId");
+                    throw new ArgumentOutOfRangeException(nameof(userDto.UserTypeId), "Invalid UserTypeId");
                 }
 
                 if (userDto.UserTitleId <= 0)
                 {
-                    throw new ArgumentNullException(nameof(userDto.UserTitleId), "Invalid UserTitleId");
+                    throw new ArgumentOutOfRangeException(nameof(userDto.UserTitleId), "Invalid UserTitleId");
                 }
 
                 if (!string.IsNullOrEmpty(userDto.Name) && !string.IsNullOrEmpty(userDto.Surname) && (userDto.Name.Length > 20 || userDto.Surname.Length > 20))

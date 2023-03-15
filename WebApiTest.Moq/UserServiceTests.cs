@@ -114,10 +114,13 @@ namespace WebApiTest.Moq
         public async Task GetUserDtoByIdAsync_WithInvalidId_ShouldThrowArgumentOutOfRangeException()
         {
             // Arrange
-            var userId = -1;
+            var Id = -1;
 
-            // Act and Assert
-            await Assert.ThrowsExceptionAsync<ArgumentOutOfRangeException>(() => _userService.GetUserDtoByIdAsync(userId));
+            // Act
+            Func<Task> act = () => _userService.GetUserDtoByIdAsync(Id);
+
+            // Assert
+            await act.Should().ThrowAsync<ArgumentOutOfRangeException>();
         }
 
         [TestMethod]
@@ -177,9 +180,10 @@ namespace WebApiTest.Moq
         {
             // Arrange
             UserDto userDto = null!;
-
-            // Act and Assert
-            await Assert.ThrowsExceptionAsync<ArgumentNullException>(() => _userService.AddNewUserDtoAsync(userDto));
+            // Act
+            Func<Task> act = () => _userService.AddNewUserDtoAsync(userDto);
+            // Assert
+            await act.Should().ThrowAsync<ArgumentNullException>();
         }
 
         [TestMethod]
@@ -194,9 +198,10 @@ namespace WebApiTest.Moq
                 Surname = "OneSurname",
                 EmailAddress = "example@example.com"
             };
-
-            // Act and Assert
-            await Assert.ThrowsExceptionAsync<ArgumentNullException>(() => _userService.AddNewUserDtoAsync(userDto));
+            // Act
+            Func<Task> act = () => _userService.AddNewUserDtoAsync(userDto);
+            // Assert
+            await act.Should().ThrowAsync<ArgumentOutOfRangeException>();
         }
 
         [TestMethod]
@@ -212,12 +217,15 @@ namespace WebApiTest.Moq
                 EmailAddress = "example@example.com"
             };
 
-            // Act and Assert
-            await Assert.ThrowsExceptionAsync<ArgumentNullException>(() => _userService.AddNewUserDtoAsync(userDto));
+            // Act
+            Func<Task> act = () => _userService.AddNewUserDtoAsync(userDto);
+
+            // Assert
+            await act.Should().ThrowAsync<ArgumentOutOfRangeException>();
         }
 
         [TestMethod]
-        public async Task AddNewUserDtoAsync_WhenNameOrSurnameLengthIsGreaterThan20_ShouldThrowArgumentOutOfRangeException()
+        public async Task AddNewUserDtoAsync_WhenNameLengthIsGreaterThan20_ShouldThrowArgumentOutOfRangeException()
         {
             // Arrange
             var userDto = new UserDto
@@ -229,8 +237,31 @@ namespace WebApiTest.Moq
                 EmailAddress = "johndoe@example.com"
             };
 
-            // Act and Assert
-            await Assert.ThrowsExceptionAsync<ArgumentOutOfRangeException>(() => _userService.AddNewUserDtoAsync(userDto));
+            // Act
+            Func<Task> act = () => _userService.AddNewUserDtoAsync(userDto);
+
+            // Assert
+            await act.Should().ThrowAsync<ArgumentOutOfRangeException>();
+        }
+
+        [TestMethod]
+        public async Task AddNewUserDtoAsync_WhenSurnameLengthIsGreaterThan20_ShouldThrowArgumentOutOfRangeException()
+        {
+            // Arrange
+            var userDto = new UserDto
+            {
+                UserTypeId = 1,
+                UserTitleId = 1,
+                Name = "John",
+                Surname = "Doeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+                EmailAddress = "johndoe@example.com"
+            };
+
+            // Act
+            Func<Task> act = () => _userService.AddNewUserDtoAsync(userDto);
+
+            // Assert
+            await act.Should().ThrowAsync<ArgumentOutOfRangeException>();
         }
 
         [TestMethod]
@@ -248,8 +279,11 @@ namespace WebApiTest.Moq
                 "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee@example.com"
             };
 
-            // Act and Assert
-            await Assert.ThrowsExceptionAsync<ArgumentOutOfRangeException>(() => _userService.AddNewUserDtoAsync(userDto));
+            // Act
+            Func<Task> act = () => _userService.AddNewUserDtoAsync(userDto);
+
+            // Assert
+            await act.Should().ThrowAsync<ArgumentOutOfRangeException>();
         }
 
         [TestMethod]
@@ -273,8 +307,11 @@ namespace WebApiTest.Moq
             // Arrange
             int invalidUserId = 0;
 
-            // Act and Assert
-            await Assert.ThrowsExceptionAsync<ArgumentOutOfRangeException>(() => _userService.DeleteUserAsync(invalidUserId));
+            // Act
+            Func<Task> act = () => _userService.DeleteUserAsync(invalidUserId);
+
+            // Assert
+            await act.Should().ThrowAsync<ArgumentOutOfRangeException>();
         }
     }
 }
