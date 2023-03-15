@@ -32,7 +32,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowAll", b => b.AllowAnyHeader().AllowAnyOrigin().AllowAnyMethod());
 });
 
-builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IUsersService, UsersService>();
 builder.Services.AddScoped<IUserTitlesService, UserTitlesService>();
 builder.Services.AddScoped<IUserTypesService, UserTypesService>();
 //ensures that each request has its own separate database context and avoids concurrency and data consistency issues
