@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "V8ic8yF0W28dz7cHUMctpOG/NkXbxrE1AoNKD5dCqb/xREUkRNHl3nD+dcARwCVXplay85ybeoMf8fJkBdU/VA==",
+  "dgSpecHash": "ItGmK08aoclwJjjrbxvHyHoyu3Bn9ZG8gqQ3C/6yzVq6UGrH1jdbVmXNmKecG8U9LYO1TY9BDjkKIDmkVGy+Pw==",
   "success": true,
   "projectFilePath": "C:\\Users\\akaps\\Documents\\Visual Studio 2022\\Projects\\MT_LRS\\WebApiTest.Moq\\WebApiTest.Moq.csproj",
   "expectedPackageFiles": [
@@ -10,6 +10,7 @@
     "C:\\Users\\akaps\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
     "C:\\Users\\akaps\\.nuget\\packages\\castle.core\\5.1.1\\castle.core.5.1.1.nupkg.sha512",
     "C:\\Users\\akaps\\.nuget\\packages\\coverlet.collector\\3.1.2\\coverlet.collector.3.1.2.nupkg.sha512",
+    "C:\\Users\\akaps\\.nuget\\packages\\fluentassertions\\6.10.0\\fluentassertions.6.10.0.nupkg.sha512",
     "C:\\Users\\akaps\\.nuget\\packages\\humanizer.core\\2.2.0\\humanizer.core.2.2.0.nupkg.sha512",
     "C:\\Users\\akaps\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
     "C:\\Users\\akaps\\.nuget\\packages\\messagepack.annotations\\2.1.152\\messagepack.annotations.2.1.152.nupkg.sha512",

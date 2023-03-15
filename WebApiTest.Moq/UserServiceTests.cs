@@ -4,6 +4,7 @@ using Services;
 using AutoMapper;
 using WebAPI.Models;
 using WebAPI.Repositories.Interfaces;
+using FluentAssertions;
 
 namespace WebApiTest.Moq
 {
@@ -45,16 +46,16 @@ namespace WebApiTest.Moq
             var result = await _userService.GetAllUsersDtoAsync();
 
             // Assert
-            Assert.IsNotNull(result);
-            Assert.AreEqual(userDtos.Count, result.Count);
+            result.Should().NotBeNull();
+            result.Count.Should().Be(users.Count);
             for (int i = 0; i < userDtos.Count; i++)
             {
-                Assert.AreEqual(userDtos[i].Id, result[i].Id);
-                Assert.AreEqual(userDtos[i].Name, result[i].Name);
-                Assert.AreEqual(userDtos[i].Surname, result[i].Surname);
-                Assert.AreEqual(userDtos[i].EmailAddress, result[i].EmailAddress);
-                Assert.AreEqual(userDtos[i].UserTypeId, result[i].UserTypeId);
-                Assert.AreEqual(userDtos[i].UserTitleId, result[i].UserTitleId);
+                result[i].Id.Should().Be(userDtos[i].Id);
+                result[i].Name.Should().Be(userDtos[i].Name);
+                result[i].Surname.Should().Be(userDtos[i].Surname);
+                result[i].EmailAddress.Should().Be(userDtos[i].EmailAddress);
+                result[i].UserTypeId.Should().Be(userDtos[i].UserTypeId);
+                result[i].UserTitleId.Should().Be(userDtos[i].UserTitleId);
             }
         }
 
@@ -79,14 +80,13 @@ namespace WebApiTest.Moq
             var result = await _userService.GetAllUsersDtoAsync("Thanasis");
 
             // Assert
-            Assert.IsNotNull(result);
-
-            Assert.AreEqual(userDtos[0].Id, result[0].Id);
-            Assert.AreEqual(userDtos[0].Name, result[0].Name);
-            Assert.AreEqual(userDtos[0].Surname, result[0].Surname);
-            Assert.AreEqual(userDtos[0].EmailAddress, result[0].EmailAddress);
-            Assert.AreEqual(userDtos[0].UserTypeId, result[0].UserTypeId);
-            Assert.AreEqual(userDtos[0].UserTitleId, result[0].UserTitleId);
+            result.Should().NotBeNull();
+            result[0].Id.Should().Be(userDtos[0].Id);
+            result[0].Name.Should().Be(userDtos[0].Name);
+            result[0].Surname.Should().Be(userDtos[0].Surname);
+            result[0].EmailAddress.Should().Be(userDtos[0].EmailAddress);
+            result[0].UserTypeId.Should().Be(userDtos[0].UserTypeId);
+            result[0].UserTitleId.Should().Be(userDtos[0].UserTitleId);
         }
 
         [TestMethod]
@@ -102,11 +102,10 @@ namespace WebApiTest.Moq
             // Act
             var result = await _userService.GetUserDtoByIdAsync(1);
 
-            // Assert TODO FluentAssertions
-            Assert.IsNotNull(result);
-            Assert.AreEqual(expectedUser.Id, result.Id);
-            Assert.AreEqual(expectedUser.Name, result.Name);
-            Assert.AreEqual(expectedUser.Surname, result.Surname);
+            result.Should().NotBeNull();
+            result.Id.Should().Be(expectedUser.Id);
+            result.Name.Should().Be(expectedUser.Name);
+            result.Surname.Should().Be(expectedUser.Surname);
             _userRepositoryMock.Verify(x => x.GetUserByIdAsync(It.IsAny<int>()), Times.Once);
             _userRepositoryMock.VerifyNoOtherCalls();
         }
@@ -117,7 +116,7 @@ namespace WebApiTest.Moq
             // Arrange
             var userId = -1;
 
-            // Act & Assert
+            // Act and Assert
             await Assert.ThrowsExceptionAsync<ArgumentOutOfRangeException>(() => _userService.GetUserDtoByIdAsync(userId));
         }
 
@@ -136,6 +135,7 @@ namespace WebApiTest.Moq
 
             // Assert
             _userRepositoryMock.Verify(r => r.PutUserAsync(1, expectedUser), Times.Once);
+            _userRepositoryMock.VerifyNoOtherCalls();
         }
 
         [TestMethod]
@@ -169,6 +169,7 @@ namespace WebApiTest.Moq
 
             // Assert
             _userRepositoryMock.Verify(x => x.AddNewUserAsync(user), Times.Once);
+            _userRepositoryMock.VerifyNoOtherCalls();
         }
 
         [TestMethod]
@@ -177,7 +178,7 @@ namespace WebApiTest.Moq
             // Arrange
             UserDto userDto = null!;
 
-            // Act + Assert
+            // Act and Assert
             await Assert.ThrowsExceptionAsync<ArgumentNullException>(() => _userService.AddNewUserDtoAsync(userDto));
         }
 
@@ -194,7 +195,7 @@ namespace WebApiTest.Moq
                 EmailAddress = "example@example.com"
             };
 
-            // Act + Assert
+            // Act and Assert
             await Assert.ThrowsExceptionAsync<ArgumentNullException>(() => _userService.AddNewUserDtoAsync(userDto));
         }
 
@@ -211,7 +212,7 @@ namespace WebApiTest.Moq
                 EmailAddress = "example@example.com"
             };
 
-            // Act + Assert
+            // Act and Assert
             await Assert.ThrowsExceptionAsync<ArgumentNullException>(() => _userService.AddNewUserDtoAsync(userDto));
         }
 
@@ -228,7 +229,7 @@ namespace WebApiTest.Moq
                 EmailAddress = "johndoe@example.com"
             };
 
-            // Act + Assert
+            // Act and Assert
             await Assert.ThrowsExceptionAsync<ArgumentOutOfRangeException>(() => _userService.AddNewUserDtoAsync(userDto));
         }
 
@@ -247,7 +248,7 @@ namespace WebApiTest.Moq
                 "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee@example.com"
             };
 
-            // Act + Assert
+            // Act and Assert
             await Assert.ThrowsExceptionAsync<ArgumentOutOfRangeException>(() => _userService.AddNewUserDtoAsync(userDto));
         }
 
@@ -263,6 +264,7 @@ namespace WebApiTest.Moq
 
             // Assert
             _userRepositoryMock.Verify(x => x.DeleteUserAsync(userId), Times.Once);
+            _userRepositoryMock.VerifyNoOtherCalls();
         }
 
         [TestMethod]
