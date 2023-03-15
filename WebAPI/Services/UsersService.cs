@@ -17,10 +17,6 @@ namespace Services
             _mapper = mapper;
         }
 
-        /// <summary>Gets all users.</summary>
-        /// <returns>
-        ///  A list of Users <see cref="User"/>
-        /// </returns>
         public async Task<List<UserDto>> GetAllUsersDtoAsync(string? filter = null)
         {
             var users = await _userRepository.GetAllUsersAsync(filter);
@@ -28,11 +24,6 @@ namespace Services
             return userDtos;
         }
 
-        /// <summary>Gets the user by ID.</summary>
-        /// <param name="id">The identifier.</param>
-        /// <returns>
-        ///  A Single <see cref="User"/>
-        /// </returns>
         public async Task<UserDto> GetUserDtoByIdAsync(int id)
         {
             if (id <= 0)
@@ -44,9 +35,6 @@ namespace Services
             return userDto;
         }
 
-        /// <summary>Updates the user with ID.</summary>
-        /// <param name="id">The identifier.</param>
-        /// <param name="user">The user.</param>
         public async Task PutUserDtoAsync(int id, UserDto userDto)
         {
             if (id <= 0 || id != userDto.Id)
@@ -57,20 +45,6 @@ namespace Services
             await _userRepository.PutUserAsync(id, user);
         }
 
-        /// <summary>
-        /// Adds the new user asynchronous.
-        /// </summary>
-        /// <param name="user">The user.</param>
-        /// <exception cref="System.ArgumentNullException">
-        /// UserTypeId - Invalid UserTypeId
-        /// or
-        /// UserTitleId - Invalid UserTitleId
-        /// or
-        /// UserTitleId - Email Address cannot be greater than 50 characters
-        /// or
-        /// Invalid User
-        /// </exception>
-        /// <exception cref="System.ArgumentOutOfRangeException">Name - Name and Surname length cannot be greater than 20 characters</exception>
         public async Task AddNewUserDtoAsync(UserDto userDto)
         {
             if (userDto != null)
@@ -103,11 +77,6 @@ namespace Services
             }
         }
 
-        /// <summary>
-        /// Deletes the user.
-        /// </summary>
-        /// <param name="id">The identifier.</param>
-        /// <exception cref="System.ArgumentOutOfRangeException">id - Invalid ID</exception>
         public async Task DeleteUserAsync(int id)
         {
             if (id <= 0)

@@ -14,10 +14,6 @@ namespace Repositories
             _context = context;
         }
 
-        /// <summary>Gets all users.</summary>
-        /// <returns>
-        /// A list of Users <see cref="User"/>
-        /// </returns>
         public async Task<List<User>> GetAllUsersAsync(string? filter = null)
         {
             IQueryable<User> query = _context.User;
@@ -32,11 +28,6 @@ namespace Repositories
             return users;
         }
 
-        /// <summary>Gets the user by identifier.</summary>
-        /// <param name="id">The identifier.</param>
-        /// <returns>
-        /// Returns the <see cref="User"/> fetched by the identifier.
-        /// </returns>
         public async Task<User> GetUserByIdAsync(int id)
         {
             var user = await _context.User.FindAsync(id);
@@ -49,9 +40,6 @@ namespace Repositories
             return user;
         }
 
-        /// <summary>Updates the user with ID.</summary>
-        /// <param name="id">The identifier.</param>
-        /// <param name="user">The user.</param>
         public async Task PutUserAsync(int id, User user)
         {
             var existingUser = await _context.User.FindAsync(id);
@@ -63,8 +51,6 @@ namespace Repositories
             await _context.SaveChangesAsync();
         }
 
-        /// <summary>Adds a new user.</summary>
-        /// <param name="user">The user.</param>
         public async Task AddNewUserAsync(User user)
         {
             await _context.User.AddAsync(user);
@@ -72,8 +58,6 @@ namespace Repositories
             await _context.SaveChangesAsync();
         }
 
-        /// <summary>Deletes the user.</summary>
-        /// <param name="id">The identifier.</param>
         public async Task DeleteUserAsync(int id)
         {
             var user = await _context.User.FindAsync(id);
