@@ -43,7 +43,15 @@ export class UserService {
     return this.http.get<IUserTitle[]>(`${this.apiUserTitles}`);
   }
 
+  getUserTitle(id: number) {
+    return this.http.get<IUserTitle>(`${this.apiUserTitles}/${id}`)
+  }
+
   getUserTypes() {
     return this.http.get<IUserType[]>(`${this.apiUserTypes}`);
+  }
+
+  getUserType(id: number) {
+    return this.http.get<IUserType>(`${this.apiUserTypes}/${id}`)
   }
 }
