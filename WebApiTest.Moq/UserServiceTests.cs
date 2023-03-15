@@ -38,7 +38,7 @@ namespace WebApiTest.Moq
             new UserDto { Id = 1, Name = "George", Surname = "Georgiou", EmailAddress = "georgiou@example.com", UserTypeId = 1, UserTitleId = 1 },
             new UserDto { Id = 2, Name = "Thanasis", Surname = "Athanasiou", EmailAddress = "athanasiou@example.com", UserTypeId = 2, UserTitleId = 2 }
         };
-            _userRepositoryMock.Setup(x => x.GetAllUsersAsync()).ReturnsAsync(users);
+            _userRepositoryMock.Setup(x => x.GetAllUsersAsync(null)).ReturnsAsync(users);
             _mapperMock.Setup(x => x.Map<List<UserDto>>(users)).Returns(userDtos);
 
             // Act
@@ -56,6 +56,37 @@ namespace WebApiTest.Moq
                 Assert.AreEqual(userDtos[i].UserTypeId, result[i].UserTypeId);
                 Assert.AreEqual(userDtos[i].UserTitleId, result[i].UserTitleId);
             }
+        }
+
+        [TestMethod]
+        public async Task GetAllUsersDtoAsync_UsingFilter_ShouldReturnOneUser()
+        {
+            // Arrange
+            var users = new List<User>
+        {
+            new User { Id = 1, Name = "George", Surname = "Georgiou", EmailAddress = "georgiou@example.com", UserTypeId = 1, UserTitleId = 1 },
+            new User { Id = 2, Name = "Thanasis", Surname = "Athanasiou", EmailAddress = "athanasiou@example.com", UserTypeId = 2, UserTitleId = 2 }
+        };
+            var userDtos = new List<UserDto>
+        {
+            new UserDto { Id = 1, Name = "George", Surname = "Georgiou", EmailAddress = "georgiou@example.com", UserTypeId = 1, UserTitleId = 1 },
+            new UserDto { Id = 2, Name = "Thanasis", Surname = "Athanasiou", EmailAddress = "athanasiou@example.com", UserTypeId = 2, UserTitleId = 2 }
+        };
+            _userRepositoryMock.Setup(x => x.GetAllUsersAsync("Thanasis")).ReturnsAsync(users);
+            _mapperMock.Setup(x => x.Map<List<UserDto>>(users)).Returns(userDtos);
+
+            // Act
+            var result = await _userService.GetAllUsersDtoAsync("Thanasis");
+
+            // Assert
+            Assert.IsNotNull(result);
+
+            Assert.AreEqual(userDtos[0].Id, result[0].Id);
+            Assert.AreEqual(userDtos[0].Name, result[0].Name);
+            Assert.AreEqual(userDtos[0].Surname, result[0].Surname);
+            Assert.AreEqual(userDtos[0].EmailAddress, result[0].EmailAddress);
+            Assert.AreEqual(userDtos[0].UserTypeId, result[0].UserTypeId);
+            Assert.AreEqual(userDtos[0].UserTitleId, result[0].UserTitleId);
         }
 
         [TestMethod]
