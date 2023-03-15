@@ -20,8 +20,13 @@ namespace WebAPI.Middleware
             {
                 await _next(context);
             }
-           
             catch (ArgumentOutOfRangeException ex)
+            {
+                _logger.LogInformation(ex.Message);
+                context.Response.StatusCode = (int)HttpStatusCode.BadRequest;
+                await context.Response.WriteAsync(ex.Message);
+            }
+            catch (ArgumentNullException ex)
             {
                 _logger.LogInformation(ex.Message);
                 context.Response.StatusCode = (int)HttpStatusCode.BadRequest;
