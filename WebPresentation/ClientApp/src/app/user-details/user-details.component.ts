@@ -32,10 +32,13 @@ export class UserdetailsComponent implements OnInit {
     isActive: true
   }
 
+  emailPattern = '[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}';
+
   async UpdateUser() {
     if (this.selectedUser) {
       this._newUser.id = this.selectedUser.id;
       await this.userService.putUser(this.selectedUser.id, this._newUser).subscribe();
+      await new Promise(resolve => setTimeout(resolve, 1000)); // add a delay
       this.router.navigate(['/users']);
     }
   }

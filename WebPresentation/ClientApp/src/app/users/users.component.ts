@@ -13,6 +13,8 @@ import { UserService } from '../user.service';
 export class UsersComponent implements OnInit {
   searchQuery = '';
 
+  emailPattern = '[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}';
+
   showForm = false;
 
   usersArray: IUser[] = [];
@@ -47,8 +49,8 @@ export class UsersComponent implements OnInit {
     }
   }
 
-  ngOnInit(): void {
-    this.userService.getUsers().subscribe(users => {
+  async ngOnInit(): Promise<void> {
+    await this.userService.getUsers().subscribe(users => {
       this.usersArray = users;
     })
   }
