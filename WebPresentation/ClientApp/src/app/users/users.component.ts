@@ -22,6 +22,7 @@ export class UsersComponent implements OnInit {
   typesArray: IUserType[] = [];
 
   successMessage = '';
+  errorMessage = '';
 
   _selectedUser: IUser | undefined;
 
@@ -85,13 +86,13 @@ export class UsersComponent implements OnInit {
           next: (users) => {
             this.usersArray = users;
           },
-          error: (error) => {
-            this.successMessage = error;
+          error: () => {
+            this.errorMessage = "Please ensure all required fields are filled out accurately and try again";
           },
         });
       },
-      error: (error) => {
-        this.successMessage = error;
+      error: () => {
+        this.errorMessage = "Please ensure all required fields are filled out accurately and try again";
       },
     });
   }

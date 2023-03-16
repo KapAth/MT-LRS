@@ -31,13 +31,29 @@ export class UserdetailsComponent implements OnInit {
     userTypeId: 4,
     isActive: true
   }
-
+  successMessage = '';
+  errorMessage = '';
   emailPattern = '[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}';
 
   async UpdateUser() {
     if (this.selectedUser) {
       this._newUser.id = this.selectedUser.id;
-      await this.userService.putUser(this.selectedUser.id, this._newUser).subscribe();
+      await this.userService.putUser(this.selectedUser.id, this._newUser).subscribe({
+        next: () => {
+          this.successMessage = "User Updated Successfully";
+          /* Refresh the user list after successful addition*/
+          this.userService.getUsers().subscribe({
+            next: () => {
+            },
+            error: () => {
+              this.errorMessage = "Please ensure all required fields are filled out accurately and try again";
+            },
+          });
+        },
+        error: () => {
+          this.errorMessage = "Please ensure all required fields are filled out accurately and try again";
+        },
+      });
       await new Promise(resolve => setTimeout(resolve, 1000)); // add a delay
       this.router.navigate(['/users']);
     }

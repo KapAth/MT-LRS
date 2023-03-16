@@ -12,6 +12,12 @@
 </div>
 
 <br />
+<div *ngIf="successMessage" class="alert alert-success">
+  {{successMessage}}
+</div>
+<div *ngIf="errorMessage" class="alert alert-danger">
+  {{errorMessage}}
+</div>
 <form #userForm="ngForm" id="userForm" (ngSubmit)="UpdateUser()">
   <div class="form-group">
     <input required maxlength="20" class="form-control" type="text" name="Name" [(ngModel)]="_newUser.name" placeholder="Name" />
