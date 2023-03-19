@@ -12,7 +12,7 @@ namespace WebAPI.Repositories.Interfaces
         /// <summary>
         /// Gets all users asynchronous.
         /// </summary>
-        /// <param name="filter">The filter for name or surname.</param>
+        /// <param name="filter">The filter for name or surname (optional)</param>
         /// <returns> A list of Users <see cref="User"/></returns>
         Task<List<User>> GetAllUsersAsync(string? filter = null);
 

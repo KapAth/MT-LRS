@@ -1,7 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Repositories.Repository;
-using Repositories.Repository.Entities;
-using Services;
 using WebAPI.Models;
 using WebAPI.Services.Interfaces;
 
