@@ -1,8 +1,5 @@
 ﻿using AutoMapper;
-using Microsoft.AspNetCore.Mvc;
-using Repositories.Repository.Entities;
 using WebAPI.Models;
-using WebAPI.Repositories;
 using WebAPI.Repositories.Interfaces;
 using WebAPI.Services.Interfaces;
 

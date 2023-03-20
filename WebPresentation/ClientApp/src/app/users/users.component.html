@@ -32,34 +32,37 @@
   <div *ngIf="successMessage" class="alert alert-success">
     {{successMessage}}
   </div>
+  <div *ngIf="errorMessage" class="alert alert-danger">
+    {{errorMessage}}
+  </div>
 
-  <form id="userForm" (ngSubmit)="createUser()">
+  <form #userForm="ngForm" id="userForm" (ngSubmit)="createUser()">
     <div class="form-group">
-      <input required maxlength="20" class="form-control" type="text" name="AddNewUser" [(ngModel)]="_newUser.name" placeholder="Name" />
+      <input required maxlength="20" class="form-control" type="text" name="Name" [(ngModel)]="_newUser.name" placeholder="Name" />
     </div>
 
     <div class="form-group">
-      <input required maxlength="20" class="form-control" type="text" name="AddNewUser" [(ngModel)]="_newUser.surname" placeholder="Surname" />
+      <input required maxlength="20" class="form-control" type="text" name="Surname" [(ngModel)]="_newUser.surname" placeholder="Surname" />
     </div>
 
     <div class="form-group">
-      <input required class="form-control" type="date" name="AddNewUser" [(ngModel)]="_newUser.birthDate" placeholder="BirthDate" />
+      <input required class="form-control" type="date" name="BirthDate" [(ngModel)]="_newUser.birthDate" placeholder="BirthDate" />
     </div>
 
     <div class="form-group">
-      <input required maxlength="50" class="form-control" type="text" name="AddNewUser" [(ngModel)]="_newUser.emailAddress" placeholder="Email" />
+      <input required maxlength="50" class="form-control" type="text" name="Email" [(ngModel)]="_newUser.emailAddress" placeholder="Email" [pattern]="emailPattern" />
     </div>
 
-    <select class="form-control" name="title" [(ngModel)]="_newUser.userTitleId">
+    <select required class="form-control" name="title" [(ngModel)]="_newUser.userTitleId">
       <option *ngFor="let title of titlesArray" [value]="title.id">{{ title.description }}</option>
     </select>
 
-    <select class="form-control" name="type" [(ngModel)]="_newUser.userTypeId">
+    <select required class="form-control" name="type" [(ngModel)]="_newUser.userTypeId">
       <option *ngFor="let type of typesArray" [value]="type.id">{{ type.description }} , {{type.code}}</option>
     </select>
 
     <div>
-      <button class="btn-primary" type="submit">Add</button>
+      <button [disabled]="userForm.invalid" class="btn-primary" type="submit">Add</button>
     </div>
     <br />
   </form>

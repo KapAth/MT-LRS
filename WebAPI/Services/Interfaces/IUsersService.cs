@@ -14,15 +14,15 @@ namespace WebAPI.Services.Interfaces
         /// <summary>
         /// Gets all users dto asynchronous.
         /// </summary>
-        /// <param name="filter">The filter.</param>
-        /// <returns> A list of Users <see cref="UserDto"/></returns>
+        /// <param name="filter">The filter for name or surname (optional).</param>
+        /// <returns> A list of Users. <see cref="UserDto"/></returns>
         Task<List<UserDto>> GetAllUsersDtoAsync(string? filter = null);
 
         /// <summary>
         /// Gets the user dto by identifier asynchronous.
         /// </summary>
         /// <param name="id">The identifier.</param>
-        /// <returns>A single User <see cref="UserDto"/></returns>
+        /// <returns>A single User. <see cref="UserDto"/></returns>
         Task<UserDto> GetUserDtoByIdAsync(int id);
 
         /// <summary>Updates the user with ID.</summary>

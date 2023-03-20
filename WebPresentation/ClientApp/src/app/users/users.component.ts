@@ -13,6 +13,8 @@ import { UserService } from '../user.service';
 export class UsersComponent implements OnInit {
   searchQuery = '';
 
+  emailPattern = '[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}';
+
   showForm = false;
 
   usersArray: IUser[] = [];
@@ -20,6 +22,7 @@ export class UsersComponent implements OnInit {
   typesArray: IUserType[] = [];
 
   successMessage = '';
+  errorMessage = '';
 
   _selectedUser: IUser | undefined;
 
@@ -47,8 +50,8 @@ export class UsersComponent implements OnInit {
     }
   }
 
-  ngOnInit(): void {
-    this.userService.getUsers().subscribe(users => {
+  async ngOnInit(): Promise<void> {
+    await this.userService.getUsers().subscribe(users => {
       this.usersArray = users;
     })
   }
@@ -83,13 +86,13 @@ export class UsersComponent implements OnInit {
           next: (users) => {
             this.usersArray = users;
           },
-          error: (error) => {
-            this.successMessage = error;
+          error: () => {
+            this.errorMessage = "Please ensure all required fields are filled out accurately and try again";
           },
         });
       },
-      error: (error) => {
-        this.successMessage = error;
+      error: () => {
+        this.errorMessage = "Please ensure all required fields are filled out accurately and try again";
       },
     });
   }
