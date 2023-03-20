@@ -1,12 +1,14 @@
+using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
-using Repositories;
-using Repositories.Repository;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using Serilog;
-using Services;
 using WebAPI.Configurations;
 using WebAPI.Middleware;
 using WebAPI.Repositories;
 using WebAPI.Repositories.Interfaces;
+using WebAPI.Repositories.Repository;
 using WebAPI.Services;
 using WebAPI.Services.Interfaces;
 

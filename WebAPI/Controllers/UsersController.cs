@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
 using WebAPI.Models;
 using WebAPI.Services.Interfaces;
 
@@ -10,9 +13,9 @@ namespace WebAPI.Controllers
     {
         private readonly IUsersService _userService;
 
-        public UsersController(IUsersService userservice)
+        public UsersController(IUsersService userService)
         {
-            _userService = userservice;
+            _userService = userService ?? throw new ArgumentNullException(nameof(userService));
         }
 
         // GET: api/Users

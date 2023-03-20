@@ -1,4 +1,6 @@
-﻿namespace Repositories.Repository.Entities
+﻿using System.Collections.Generic;
+
+namespace WebAPI.Repositories.Repository.Entities
 {
     public class UserType
     {

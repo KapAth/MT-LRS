@@ -1,10 +1,13 @@
-﻿using AutoMapper;
-using Repositories.Repository.Entities;
+﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using AutoMapper;
 using WebAPI.Models;
 using WebAPI.Repositories.Interfaces;
+using WebAPI.Repositories.Repository.Entities;
 using WebAPI.Services.Interfaces;
 
-namespace Services
+namespace WebAPI.Services
 {
     public class UsersService : IUsersService
     {
@@ -13,8 +16,8 @@ namespace Services
 
         public UsersService(IUsersRepository userRepo, IMapper mapper)
         {
-            _userRepository = userRepo;
-            _mapper = mapper;
+            _userRepository = userRepo ?? throw new ArgumentNullException(nameof(userRepo));
+            _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         }
 
         public async Task<List<UserDto>> GetAllUsersDtoAsync(string? filter = null)
@@ -30,6 +33,7 @@ namespace Services
             {
                 throw new ArgumentOutOfRangeException(nameof(id), "Invalid ID");
             }
+
             var user = await _userRepository.GetUserByIdAsync(id);
             var userDto = _mapper.Map<UserDto>(user);
             return userDto;
@@ -37,10 +41,12 @@ namespace Services
 
         public async Task PutUserDtoAsync(int id, UserDto userDto)
         {
-            if (id <= 0 || id != userDto.Id)
+            if (id <= 0 ||
+                id != userDto.Id)
             {
                 throw new ArgumentOutOfRangeException(nameof(id), "Invalid ID");
             }
+
             User user = _mapper.Map<User>(userDto);
             await _userRepository.PutUserAsync(id, user);
         }
@@ -59,15 +65,21 @@ namespace Services
                     throw new ArgumentOutOfRangeException(nameof(userDto.UserTitleId), "Invalid UserTitleId");
                 }
 
-                if (!string.IsNullOrEmpty(userDto.Name) && !string.IsNullOrEmpty(userDto.Surname) && (userDto.Name.Length > 20 || userDto.Surname.Length > 20))
+                if (!string.IsNullOrEmpty(userDto.Name) &&
+                    !string.IsNullOrEmpty(userDto.Surname) &&
+                    (userDto.Name.Length > 20 || userDto.Surname.Length > 20))
                 {
-                    throw new ArgumentOutOfRangeException(nameof(userDto.Name), "Name and Surname length cannot be greater than 20 characters");
+                    throw new ArgumentOutOfRangeException(nameof(userDto.Name),
+                        "Name and Surname length cannot be greater than 20 characters");
                 }
 
-                if (!string.IsNullOrEmpty(userDto.EmailAddress) && userDto.EmailAddress.Length > 50)
+                if (!string.IsNullOrEmpty(userDto.EmailAddress) &&
+                    userDto.EmailAddress.Length > 50)
                 {
-                    throw new ArgumentOutOfRangeException(nameof(userDto.UserTitleId), "Email Address cannot be greater than 50 characters");
+                    throw new ArgumentOutOfRangeException(nameof(userDto.UserTitleId),
+                        "Email Address cannot be greater than 50 characters");
                 }
+
                 User user = _mapper.Map<User>(userDto);
                 await _userRepository.AddNewUserAsync(user);
             }
@@ -83,6 +95,7 @@ namespace Services
             {
                 throw new ArgumentOutOfRangeException(nameof(id), "Invalid ID");
             }
+
             await _userRepository.DeleteUserAsync(id);
         }
     }

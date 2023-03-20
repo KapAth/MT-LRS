@@ -1,4 +1,7 @@
-﻿using AutoMapper;
+﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using AutoMapper;
 using WebAPI.Models;
 using WebAPI.Repositories.Interfaces;
 using WebAPI.Services.Interfaces;
@@ -12,8 +15,8 @@ namespace WebAPI.Services
 
         public UserTypesService(IUserTypesRepository userTypesRepo, IMapper mapper)
         {
-            _userTypesRepository = userTypesRepo;
-            _mapper = mapper;
+            _userTypesRepository = userTypesRepo ?? throw new ArgumentNullException(nameof(userTypesRepo));
+            _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         }
 
         public async Task<List<UserTypeDto>> GetAllUserTypesDtoAsync()

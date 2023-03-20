@@ -1,9 +1,6 @@
-﻿using Repositories.Repository.Entities;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System;
 
-namespace Repositories.Repository.Entities
+namespace WebAPI.Repositories.Repository.Entities
 
 {
     public class User

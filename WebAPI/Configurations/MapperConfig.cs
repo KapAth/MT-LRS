@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using Repositories.Repository.Entities;
 using WebAPI.Models;
+using WebAPI.Repositories.Repository.Entities;
 
 namespace WebAPI.Configurations
 {

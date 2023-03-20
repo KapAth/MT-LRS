@@ -1,4 +1,5 @@
-﻿using Repositories.Repository.Entities;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using WebAPI.Models;
 
 namespace WebAPI.Services.Interfaces
@@ -8,7 +9,7 @@ namespace WebAPI.Services.Interfaces
         /// <summary>
         /// Adds the new user asynchronous.
         /// </summary>
-        /// <param name="user">The user.</param>
+        /// <param name="userDto">The user.</param>
         Task AddNewUserDtoAsync(UserDto userDto);
 
         /// <summary>
@@ -27,7 +28,7 @@ namespace WebAPI.Services.Interfaces
 
         /// <summary>Updates the user with ID.</summary>
         /// <param name="id">The identifier.</param>
-        /// <param name="user">The user.</param>
+        /// <param name="userDto">The user.</param>
         Task PutUserDtoAsync(int id, UserDto userDto);
 
         /// <summary>Deletes the user by setting isActive value to false.</summary>

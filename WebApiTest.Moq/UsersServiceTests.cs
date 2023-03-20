@@ -1,10 +1,13 @@
-using Moq;
-using Repositories.Repository.Entities;
-using Services;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using AutoMapper;
+using FluentAssertions;
+using Moq;
 using WebAPI.Models;
 using WebAPI.Repositories.Interfaces;
-using FluentAssertions;
+using WebAPI.Repositories.Repository.Entities;
+using WebAPI.Services;
 
 namespace WebApiTest.Moq
 {
@@ -30,15 +33,31 @@ namespace WebApiTest.Moq
         {
             // Arrange
             var users = new List<User>
-        {
-            new User { Id = 1, Name = "George", Surname = "Georgiou", EmailAddress = "georgiou@example.com", UserTypeId = 1, UserTitleId = 1 },
-            new User { Id = 2, Name = "Thanasis", Surname = "Athanasiou", EmailAddress = "athanasiou@example.com", UserTypeId = 2, UserTitleId = 2 }
-        };
+            {
+                new()
+                {
+                    Id = 1, Name = "George", Surname = "Georgiou", EmailAddress = "georgiou@example.com",
+                    UserTypeId = 1, UserTitleId = 1
+                },
+                new()
+                {
+                    Id = 2, Name = "Thanasis", Surname = "Athanasiou", EmailAddress = "athanasiou@example.com",
+                    UserTypeId = 2, UserTitleId = 2
+                }
+            };
             var userDtos = new List<UserDto>
-        {
-            new UserDto { Id = 1, Name = "George", Surname = "Georgiou", EmailAddress = "georgiou@example.com", UserTypeId = 1, UserTitleId = 1 },
-            new UserDto { Id = 2, Name = "Thanasis", Surname = "Athanasiou", EmailAddress = "athanasiou@example.com", UserTypeId = 2, UserTitleId = 2 }
-        };
+            {
+                new()
+                {
+                    Id = 1, Name = "George", Surname = "Georgiou", EmailAddress = "georgiou@example.com",
+                    UserTypeId = 1, UserTitleId = 1
+                },
+                new()
+                {
+                    Id = 2, Name = "Thanasis", Surname = "Athanasiou", EmailAddress = "athanasiou@example.com",
+                    UserTypeId = 2, UserTitleId = 2
+                }
+            };
             _userRepositoryMock.Setup(x => x.GetAllUsersAsync(null)).ReturnsAsync(users);
             _mapperMock.Setup(x => x.Map<List<UserDto>>(users)).Returns(userDtos);
 
@@ -64,15 +83,31 @@ namespace WebApiTest.Moq
         {
             // Arrange
             var users = new List<User>
-        {
-            new User { Id = 1, Name = "George", Surname = "Georgiou", EmailAddress = "georgiou@example.com", UserTypeId = 1, UserTitleId = 1 },
-            new User { Id = 2, Name = "Thanasis", Surname = "Athanasiou", EmailAddress = "athanasiou@example.com", UserTypeId = 2, UserTitleId = 2 }
-        };
+            {
+                new()
+                {
+                    Id = 1, Name = "George", Surname = "Georgiou", EmailAddress = "georgiou@example.com",
+                    UserTypeId = 1, UserTitleId = 1
+                },
+                new()
+                {
+                    Id = 2, Name = "Thanasis", Surname = "Athanasiou", EmailAddress = "athanasiou@example.com",
+                    UserTypeId = 2, UserTitleId = 2
+                }
+            };
             var userDtos = new List<UserDto>
-        {
-            new UserDto { Id = 1, Name = "George", Surname = "Georgiou", EmailAddress = "georgiou@example.com", UserTypeId = 1, UserTitleId = 1 },
-            new UserDto { Id = 2, Name = "Thanasis", Surname = "Athanasiou", EmailAddress = "athanasiou@example.com", UserTypeId = 2, UserTitleId = 2 }
-        };
+            {
+                new()
+                {
+                    Id = 1, Name = "George", Surname = "Georgiou", EmailAddress = "georgiou@example.com",
+                    UserTypeId = 1, UserTitleId = 1
+                },
+                new()
+                {
+                    Id = 2, Name = "Thanasis", Surname = "Athanasiou", EmailAddress = "athanasiou@example.com",
+                    UserTypeId = 2, UserTitleId = 2
+                }
+            };
             _userRepositoryMock.Setup(x => x.GetAllUsersAsync("Thanasis")).ReturnsAsync(users);
             _mapperMock.Setup(x => x.Map<List<UserDto>>(users)).Returns(userDtos);
 
@@ -114,10 +149,10 @@ namespace WebApiTest.Moq
         public async Task GetUserDtoByIdAsync_WithInvalidId_ShouldThrowArgumentOutOfRangeException()
         {
             // Arrange
-            var Id = -1;
+            var id = -1;
 
             // Act
-            Func<Task> act = () => _userService.GetUserDtoByIdAsync(Id);
+            Func<Task> act = () => _userService.GetUserDtoByIdAsync(id);
 
             // Assert
             await act.Should().ThrowAsync<ArgumentOutOfRangeException>();
@@ -265,7 +300,8 @@ namespace WebApiTest.Moq
         }
 
         [TestMethod]
-        public async Task AddNewUserDtoAsync_WhenEmailAddressLengthIsGreaterThan50_ShouldThrowArgumentOutOfRangeException()
+        public async Task
+            AddNewUserDtoAsync_WhenEmailAddressLengthIsGreaterThan50_ShouldThrowArgumentOutOfRangeException()
         {
             // Arrange
             var userDto = new UserDto
@@ -275,8 +311,8 @@ namespace WebApiTest.Moq
                 Name = "Joh",
                 Surname = "Doe",
                 EmailAddress = "johndoeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee" +
-                "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee" +
-                "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee@example.com"
+                               "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee" +
+                               "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee@example.com"
             };
 
             // Act

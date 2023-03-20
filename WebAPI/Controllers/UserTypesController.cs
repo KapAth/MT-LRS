@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
 using WebAPI.Models;
 using WebAPI.Services.Interfaces;
 
@@ -12,7 +15,7 @@ namespace WebAPI.Controllers
 
         public UserTypesController(IUserTypesService userTypesService)
         {
-            _userTypesService = userTypesService;
+            _userTypesService = userTypesService ?? throw new ArgumentNullException(nameof(userTypesService));
         }
 
         // GET: api/UserTypes

@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Repositories.Repository.Entities;
+using WebAPI.Repositories.Repository.Entities;
 
-namespace Repositories.Repository
+namespace WebAPI.Repositories.Repository
 {
     public class MTLRSDbContext : DbContext
     {

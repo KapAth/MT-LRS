@@ -1,6 +1,8 @@
+using System;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Diagnostics;
+using Microsoft.Extensions.Logging;
 
 namespace WebPresentation.Pages
 {
@@ -11,7 +13,7 @@ namespace WebPresentation.Pages
 
         public ErrorModel(ILogger<ErrorModel> logger)
         {
-            _logger = logger;
+            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
 
         public string? RequestId { get; set; }

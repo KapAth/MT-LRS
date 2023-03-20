@@ -1,6 +1,8 @@
-﻿using AutoMapper;
+﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using AutoMapper;
 using WebAPI.Models;
-using WebAPI.Repositories;
 using WebAPI.Repositories.Interfaces;
 using WebAPI.Services.Interfaces;
 
@@ -13,8 +15,8 @@ namespace WebAPI.Services
 
         public UserTitlesService(IUserTitlesRepository userTitlesRepo, IMapper mapper)
         {
-            _userTitlesRepository = userTitlesRepo;
-            _mapper = mapper;
+            _userTitlesRepository = userTitlesRepo ?? throw new ArgumentNullException(nameof(userTitlesRepo));
+            _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         }
 
         public async Task<List<UserTitleDto>> GetAllUserTitlesDtoAsync()

@@ -1,14 +1,16 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using Repositories.Repository;
-using Repositories.Repository.Entities;
 using WebAPI.Repositories.Interfaces;
+using WebAPI.Repositories.Repository;
+using WebAPI.Repositories.Repository.Entities;
 
 namespace WebAPI.Repositories
 {
     public class UserTypesRepository : IUserTypesRepository
     {
-        private MTLRSDbContext _context;
+        private readonly MTLRSDbContext _context;
 
         public UserTypesRepository(MTLRSDbContext context)
         {

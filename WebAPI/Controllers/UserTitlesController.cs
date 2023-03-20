@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
 using WebAPI.Models;
-using WebAPI.Services;
 using WebAPI.Services.Interfaces;
 
 namespace WebAPI.Controllers
@@ -13,7 +15,7 @@ namespace WebAPI.Controllers
 
         public UserTitlesController(IUserTitlesService userTitleService)
         {
-            _userTitlesService = userTitleService;
+            _userTitlesService = userTitleService ?? throw new ArgumentNullException(nameof(userTitleService));
         }
 
         // GET: api/UserTitles

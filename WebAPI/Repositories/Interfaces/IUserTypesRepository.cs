@@ -1,6 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Repositories.Repository.Entities;
-using WebAPI.Models;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using WebAPI.Repositories.Repository.Entities;
 
 namespace WebAPI.Repositories.Interfaces
 {

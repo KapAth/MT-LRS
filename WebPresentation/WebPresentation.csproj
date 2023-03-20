@@ -21,13 +21,6 @@
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="ClientApp\.angular\cache\14.0.3\angular-webpack\3399aac3f31241da4fd1e774f5c01e3598e95104\" />
-    <Folder Include="ClientApp\.angular\cache\14.0.3\angular-webpack\3eed7cff109222c9abf259f3d2b72659859db178\" />
-    <Folder Include="ClientApp\.angular\cache\14.0.3\angular-webpack\740bb5d580e597eeea13688ed0bced3f59455f63\" />
-    <Folder Include="ClientApp\.angular\cache\14.0.3\angular-webpack\75b136b15b961134e59e7b485c949a0c61114197\" />
-  </ItemGroup>
-
     <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
     <!-- Ensure Node.js is installed -->
     <Exec Command="node --version" ContinueOnError="true">

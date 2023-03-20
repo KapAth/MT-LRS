@@ -1,17 +1,20 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Repositories.Repository;
-using Repositories.Repository.Entities;
+﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using WebAPI.Repositories.Interfaces;
+using WebAPI.Repositories.Repository;
+using WebAPI.Repositories.Repository.Entities;
 
 namespace WebAPI.Repositories
 {
     public class UserTitlesRepository : IUserTitlesRepository
     {
-        private MTLRSDbContext _context;
+        private readonly MTLRSDbContext _context;
 
         public UserTitlesRepository(MTLRSDbContext context)
         {
-            _context = context;
+            _context = context ?? throw new ArgumentNullException(nameof(context));
         }
 
         public async Task<List<UserTitle>> GetAllUserTitlesAsync()
